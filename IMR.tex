@@ -1,0 +1,151 @@
+\chapter{L'apparato IMR (Interfaccia Mobile Remota)}
+
+
+L'apparato IMR di RFI nasce con lo scopo di migliorare e velocizzare l'esecuzione delle operazioni di manutenzione lungo le varie linee ferroviarie; prima di introdurre la descrizione di tale apparato, è opportuno delineare come opera il sistema RFI di Manutenzione della Linea.\\
+Ogni stazione ferroviaria può essere considerata divisa in zone, ciascuna rappresentante una specifica sezione: la loro visualizzazione in una singola immagine viene detta sinottico.\\
+Ogni zona può essere considerata indipendente dalle altre zone confinanti, infatti, qualora si renda necessario un intervento di manutenzione, è possibile impedire il passaggio dei treni esclusivamente in quella data sezione. Tale operazione viene gestita tramite l'armadio chiavi di zona, ovvero un pannello contenente tutte le chiavi delle zone. Una chiave non inserita nel pannello indica la non agibilità della zona per qualunque operazione che non sia di manutenzione.\\
+Ad esempio, supponiamo che sia necessario effettuare operazioni di manutenzione nella zona \textit{x}, l'operatore si reca all'armadio chiavi di zona, prende la chiave \textit{x}, la sfila dal pannello e la tiene con sè fino alla fine delle operazioni di manutenzione. Una volta concluse tali operazioni, l'operatore torna in stazione e ripone la chiave nell'armadio chiavi di zona.\\
+Il problema ricorrente è che l'armadio spesso è lontano dal luogo in cui deve essere eseguita la manutenzione, quindi, all'operatore occorre spesso troppo  tempo per prendere la chiave e riporla.\\Di seguito è riportata la procedura completa per la rimozione di una chiave dall'armadio:
+\begin{enumerate}
+	\item chiedere l'autorizzazione al guardiano dell'armadio;
+	\item fare una mezza rotazione della chiave sull'armadio;
+	\item chiamare l'autorità centrale per chiedere l'autorizzazione;
+	\item staccare la chiave e iniziare le operazioni di manutenzione\cite{nove}.
+	
+\end{enumerate}
+
+\section{Apparati centrali}
+Un ruolo fondamentale per eseguire le operazioni di manutenzione della linea è costituito dagli apparati centrali. Infatti, per assegnare a ciascun treno il percorso previsto nelle stazioni, nei bivi o nelle altre località di servizio, è necessario predisporre gli scambi nella posizione voluta, assicurarsi che il percorso del treno non abbia interferenze con il percorso di altri treni e che sia libero nel momento programmato. Queste condizioni si concretizzano attraverso impianti tecnologici di varie generazioni: gli Apparati Centrali. Scopo degli Apparati Centrali di una tratta, a prescindere dalla tecnologia utilizzata, è garantire la movimentazione in sicurezza dei treni, sia in stazione che durante il percorso.\\L'\textbf{apparato centrale elettrico a itinerari} (ACEI) realizza l'itinerario in sicurezza attraverso un unico comando impartito mediante un pulsante o una tastiera dal DM (Dirigente Movimento). Alcuni di questi apparati sono comandabili a distanza e quindi rendono possibile la gestione di più stazioni o di una intera linea contemporanteamente. \\L'\textbf{apparato centrale computerizzato} (ACC) rappresenta l'evoluzione tecnologica degli Apparati Centrali realizzati con tecnologia tradizionale elettromeccanica, come l'ACEI.
+Con l'introduzione degli apparati ACC infatti le apparecchiature elettromeccaniche vengono sostituite con analoghi dispositivi elettronici, realizzati con componenti sia hardware che software, in grado comunque di garantire i medesimi livelli di sicurezza. Attraverso l'ACC vengono introdotti adeguati strumenti di diagnostica automatizzata che permettono al personale della manutenzione di effettuare le operazioni correttive necessarie in caso di guasto in tempi notevolmente ridotti rispetto alla soluzione elettromeccanica utilizzata precedentemente. \cite{cinque}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{img/apparaticentrali}
+	\caption{Apparati centrali}
+\end{figure}
+
+
+
+\section{L'apparato IMR}
+
+L'apparato IMR nasce con lo scopo di evitare che l'operatore debba andare fisicamente all'armadio chiavi di zona a prelevare la chiave necessaria per effettuare le operazioni di manutenzione.\\
+RFI vuole fare in modo che il sistema di terra ACEI/ACC comunichi con il nuovo dispositivo IMR. La funzione di questo apparato è quella di fornire connettività all'ACEI/ACC che è attualmente isolato. Il tablet  comunicherà quindi con il dispositivo IMR e quest'ultimo inoltrerà i comandi agli apparati ACEI/ACC.\\
+Dato che il malfunzionamento di una qualunque operazione è critico per la vita dell'operatore e per il corretto funzionamento della linea, tale procedura remota deve essere eseguita in completa sicurezza ed eventuali malfunzionamenti devono essere visibili per l'operatore. A tale scopo è opportuno procedere con una dettagliata analisi dei rischi.\\
+
+
+\section{Architettura IMR}
+L' architettura Terra-Tablet dell'apparato IMR evidenzia due zone distinte:
+
+\begin{itemize}
+	\item un'area non sicura, comprendente il Tablet e i server IMRG e IMRW, potenzialmente esposti a minacce dannose e che non sono costruiti per soddisfare qualsiasi vincolo di sicurezza;
+	\item un'area sicura, comprendente il server locale IMRS e gli enti di stazione. Tutte le azioni che avvengono in tale zona funzionano in conformità con il SIL con cui sono state certificate, con una probabilità di guasti catastrofici ragionevolmente bassa.
+\end{itemize}  
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{img/architettura}
+	\caption{Architettura IMR}
+\end{figure}
+
+\subsection{Tablet Operatore}
+
+Ogni addetto AM viene dotato di un tablet TB commerciale per consentire la remotizzazione delle operazioni che richiederebbero l'accesso fisico all'armadio chiavi di zona.\\
+Come evidenziato dall'immagine, il tablet si trova nell'area non sicura e pertanto le azioni eseguite devono essere rigorosamente regolamentate per evitare problemi di safety. Il dispositivo mobile esegue una Web App tramite la quale il manutentore potrà comunicare con l'apparato di terra e potrà inviare comandi e visualizzare lo stato della linea e degli enti.
+\subsection{Server IMRG}
+Tale componente si trova nell'area non sicura, è un server generico senza nessun vincolo di safety o security. Le due uniche funzioni di IMRG sono:
+\begin{itemize}
+	\item effettuare un reindirizzamento iniziale dell'AM all'IMRW corretto in base alla stazione che l'AM seleziona,
+	\item fungere da repository condivisa delle chiavi pubbliche degli agenti di manutenzione.
+\end{itemize} 
+\subsection{Server IMRW}
+Tale componente, come i due appena descritti, si trova nella zona non sicura dell'architettura. Il ruolo del server è quello di esporre i servizi web che possono essere chiamati remotamente dagli utenti e di assemblare le pagine web sulla base dei dati forniti da IMRS.
+\subsection{Server IMRS}
+Questo server sicuro gestisce, controlla, valida e verifica le interazioni tra l'operatore e gli apparati computerizzati di stazione. Tale componente è progettato, sviluppato e certificato SIL4, si trova infatti nella zona sicura.\\
+Le principali funzioni sono di seguito elencate:
+\begin{itemize}
+	\item gestire l'autenticazione,
+	\item controllare i comandi inviati dall'AM e comunicare con gli attuatori
+	\item memorizzare dati critici
+	\item comunicare con l'IMRW, fornendogli i dati necessari all'assemblaggio delle pagine web necessarie.
+\end{itemize}
+
+
+\section{Procedura di Connessione}
+Di seguito è riportata la procedura di connessione del tablet:
+\begin{enumerate}
+	\item l'agente di manutenzione (AM), dopo aver acceso il Tablet ed aperto la Web App, specifica la stazione in cui sta operando;
+	\item il Tablet chiede al server globale IMRG l'indirizzo del server locale IMRW relativo alla stazione in cui l'AM deve eseguire le operazioni di manutenzione;
+	\item una volta che l'AM ottiene l'indirizzo del server di stazione, viene stabilita automaticamente una connessione punto-punto diretta con IMRW;
+	\item l'AM immette le informazioni per l'autenticazione sul server locale: qualcosa che sa (la password) e qualcosa che possiede (la chiave privata);
+	\item la coppia unsername-password viene crittografata utilizzando la chiave privata e inviata al server locale IMRW, che la reinoltra al server sicuro IMRS, assieme all'elenco delle chiavi pubbliche memorizzate su IMRG;
+	\item l'autenticazione viene interamente eseguita su IMRS;
+	\item se la fase di autenticazione è andata a buon fine, verrà inviata la schermata del Terminale Operatore sul Tablet.
+\end{enumerate}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{img/procedura}
+	\caption{Procedura di Connessione}
+\end{figure}
+
+\subsection{Funzionalità del Terminale Operatore}
+Il Terminale Operatore (TO) è lo strumento attraverso il quale un operatore è in grado di comunicare con l'apparato centrale ACC/ACEI, inoltrando comandi e ricevendo informazioni utili sullo stato del sistema. Dal TO devono essere attivabili principalmente le seguenti funzioni:
+\begin{itemize}
+	\item Funzioni di Movimento (formazione itinerari, formazione istradamenti, etc);
+	\item Funzioni di Ente (manovra deviatoio, esclusione ente, soccorsi, etc);
+	\item Funzioni di Soccorso mirate per i Movimenti;
+	\item Funzioni per la gestione delle Anormalità e degli Allarmi;
+	\item Funzioni per la messaggistica e la modulistica.
+\end{itemize}
+A ciascuna categoria di funzioni è associato uno specifico menù, a cui corrisponde un sottomenù, più o meno articolato a seconda del tipo di funzione. Al fine di rendere più immediata possibile la scelta delle funzioni da eseguire, l'accesso ai menù è possibile attraverso icone che determinano l'apertura delle maschere corrispondenti.\\
+Nello specifico, le icone presenti nella schermata Terminale Operatore rappresentano i seguenti enti:
+\begin{itemize}
+	\item	DV - Deviatoio
+	\item	SCF - Scarpa Fermacarri
+	\item	SE - Segnale Alto
+	\item	TCH - Posto a Terra
+	\item	CDB - Circuito di Binario di Stazione
+	\item	CDBL - Corcuito di Binario di Linea
+	\item	SB - Segnale Basso
+	\item	PL - Passaggio a Livello di Stazione
+	\item	PLL - Passaggio a Livello di Linea
+	\item	LINEA - Punto di Linea
+	\item	BL - Inversione di Blocco
+	\item	BLO - Blocco Semplice Binario
+	\item	AVV - Segnale di Avviso
+	\item	FD - Fermadeviatoio
+	\item	CHRl - Chiave Rallentamento Segnale Alto
+	\item	TI - Chiave Titolare interruzione
+	\item	FS - Fuori Servizio di Linea
+\end{itemize}
+Attraverso le icone corrispondenti ai vari enti sarà possibile eseguire una vastità di comandi invocabili dall'operatore tramite IMR.\cite{nove}\\
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{img/interfaccia}
+	\caption{Icone del Terminale Operatore}
+\end{figure}
+Quindi, le icone sono riportate in alto a sinistra e i relativi sottomenù vengono eventualmente generati dopo aver cliccato sul simbolo specifico.\\ La modalità d'inoltro del comando può essere differenziata, infatti per alcuni comandi è richiesta la pressione dei tasti 0 - INVIO per confermare l'esecuzione, mentre altre volte, per i comandi critici, il comando deve essere autorizzato dal dirigente di movimento (DM) per diventare effettivo.
+\newline
+Nella sezione destra della schermata è possibile visualizzare una porzione del quadro luminoso relativa alla zona in cui l'agente di manutenzione sta effettuando le operazioni necessarie.\\
+Nella schermata del Terminale Operatore viene riportata l'ora corrente insieme all'ora in cui è stato generato il quadro luminoso e lo stato dell'ente. Il quadro luminoso viene aggiornato periodicamente e l'ora dell'ultimo aggiornamento viene rappresentata in modo tale che l'operatore, confrontando l'ora corrente con l'ora in cui è stato generato il quadro luminoso, possa capire quanto le informazioni riportate siano attendibili.\\
+Oltre al Terminale Operatore, tramite dei pulsanti riportati in alto a destra, è possibile accedere anche alla \textbf{schermata di Log} che offre informazioni sulle ultime operazioni eseguite, al \textbf{Piano schematico} e al \textbf{Quadro luminoso}, queste due schermate offrono ulteriori informazioni sullo stato del sistema.
+
+
+\subsection{Il piano schematico}
+
+Il \textbf{piano schematico} rappresenta senza il rispetto delle proporzioni la topografia di una stazione e riporta con un'apposita simbologia tutti gli enti di piazzale, sia relativi all'armamento che all'impianto di segnalamento, questi ultimi opportunamente numerati, nonché altri elementi essenziali a caratterizzare la stazione per le esigenze della circolazione (fabbricato viaggiatori, marciapiedi, sottopassi pedonali, attraversamenti stradali, eventuali gallerie ecc.) \cite{sei}\\
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.3]{img/pianoschematico}
+	\caption{Piano schematico stazione di Oderzo}
+\end{figure}
+
+\subsection{Il quadro luminoso}
+
+Il \textbf{quadro luminoso} prende il suo nome dalla possibilità che gli è precipua di cambiare aspetto in alcune parti per indicare all'operatore la situazione degli itinerari dei treni, degli instradamenti delle manovre, della disposizione dei segnali, della posizione dei deviatori, dell'occupazione dei binari e quant'altro sia necessario per garantire regolarità e sicurezza all'interno di una stazione ferroviaria. Questi controlli vengono offerti da lampadine poste dietro il quadro stesso che cambiano aspetto (acceso-spento) e attraverso filtri colorati rappresentano la situazione (SIL4) che si presenta nel piazzale della stazione. \cite{sette} \\
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.3]{img/quadrolumcom}
+	\caption{Quadro luminoso stazione di Oderzo}
+\end{figure}
+
+
+
+

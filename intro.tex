@@ -1,0 +1,64 @@
+\chapter{Introduzione}
+L'Information Technology (IT) svolge un ruolo fondamentale nella vita di tutti i giorni, nel modo in cui riusciamo a relazionarci, a lavorare, a vivere la nostra quotidianeità. L'IT è entrata nella nostra vita in modo estremamente intenso, permeando quasi tutti i comportamenti quotidiani e ottenendo un'importanza rilevante anche a livello aziendale, oggi infatti può essere considerata lo strumento più efficace per la creazione di ricchezza economica.\\ Grazie all'IT le aziende hanno potuto generare vantaggi e sfruttare nuove opportunità. Oggi questi vantaggi e benefici, comprensivi di buone pratiche, applicazioni, funzionalità e infrastrutture, sono alla portata di tutti. \\ Visto l'importante ruolo assunto dall'IT, nasce l'esigenza di preservare tali sistemi dai danni inerenti l'integrità, la disponibilità e la confidenzialità delle informazioni in essi custodite.\\ A questa necessità fa capo l'\textit{hazard analysis}, o analisi dei rischi, un processo di valutazione delle criticità inerenti un sistema informatico.\\ L'esigenza di iniziare a quantificare i rischi è nata in ambito bancario, infatti fin dal tardo medioevo i banchieri sono abituati a gestire il rischio di credito, ovvero il principale rischio a cui essi sono esposti. I banchieri lombardi che a partire dal 1100 operavano in Francia, Germania ed Inghilterra utilizzavano già efficaci tecniche di mitigazione del rischio di credito, quali ad esempio la richiesta di cessione in pegno di oggetti di valore.\cite{otto} \\ 
+Il rischio è la potenzialità che un'azione o un'attività porti a una perdita o ad un evento indesiderabile. Quello del rischio è un concetto connesso con le aspettative umane e la loro capacità di predizione/intervento in situazioni non note o incerte. L'uomo nel corso degli anni ha imparato a confrontarsi con il rischio con un atteggiamento di sfida, ricercando sempre più un equilibrio tra razionalizzazione degli eventi e utilizzo dell'intuito.\\
+Non è possibile individuare un comportamento umano o un'attività naturale che non venga sottoposta a rischi temporanei o costanti; solamente le scienze pure, governate dalle ferree leggi del puro determinismo, non si confrontano con tale concetto.\\
+
+
+\section{Gestione dei rischi nei sistemi informatici}
+I sistemi informatici complessi vengono adoperati sempre più frequentemente per svolgere compiti
+altamente critici, che coinvolgono la sicurezza e l'incolumità delle persone.
+Si pensi per esempio ai sistemi di controllo di aerei, delle centrali nucleari, dei sistemi ferroviari o anche solo ai sistemi di transazioni monetarie.
+É di fondamentale importanza che tali sistemi adottino delle tecniche in grado di mantenere sempre corrette le funzioni per le quali sono destinati.\\
+La \textbf{dependability} è una caratteristica dei sistemi e consiste nella loro capacità di mostrarsi "affidabili" nei confronti degli utilizzatori, tale caratteristica porta gli utilizzatori a potersi "fidare" del sistema stesso e a poterlo quindi utilizzare senza particolari preoccupazioni.\cite{dieci}
+La dependability è un concetto che comprende all'interno del suo significato i seguenti attributi:
+\begin{itemize}
+
+\item Disponibilità (Availability): è la prontezza del sistema nell'erogare un servizio corretto; misura la fornitura di servizio corretto, rispetto all'alternanza tra servizio corretto e non corretto.
+\item Affidabilità (Reliability): è la capacità del sistema di erogare un servizio corretto in modo continuo, misura la fornitura continua di un servizio corretto.
+\item Confidenzialità (Confidentiality): è l'assenza di diffusione non autorizzata di informazioni; misura l'assenza di esposizione non autorizzata di informazione.
+
+\item Manutenibilità (Mantainability): la capacità del sistema di subire modifiche e riparazioni; misura il tempo necessario per ristabilire un servizio corretto.
+\item Sicurezza (Safety): è l'assenza di conseguenze catastrofiche sull'utente e sull'ambiente circostante.
+\item Sicurezza (Security): è vista come la contemporanea esistenza di availability, confidentiality e integrity.
+\end{itemize}
+Ciascuno di questi attributi può essere più o meno importante in base all'applicazione: la disponibilità del servizio è sempre richiesta, anche se può variare sia l'importanza relativa che il livello quantitativo richiesto; la affidabilità, la safety, la confidenzialità e gli altri attributi possono essere richiesti o meno.\\
+Il grado con cui un sistema possiede questi attributi deve essere interpretato in senso probabilistico e non in senso assoluto, deterministico; a causa dell'inevitabile occorrenza dei guasti i sistemi non sono mai totalmente disponibili, affidabili, safe o secure. Per questo gli attributi di dependability possono essere definiti in senso probabilistico così da poterli trattare in modo quantitativo. \cite{due}
+Lo sviluppo di sistemi dependable richiede l'utilizzo combinato di quattro tipologie di tecniche:
+\begin{itemize}
+	\item \textbf{Prevenzione dei guasti}: per prevenire l'occorrenza o introduzione di guasti nel sistema;
+	\item \textbf{Tolleranza ai guasti}: per erogare un servizio corretto anche in presenza di guasti;
+	\item \textbf{Rimozione dei guasti}: per ridurre il numero o la gravità dei guasti;
+	\item \textbf{Previsione dei guasti}: per stimare il numero di guasti presenti nel sistema, la loro incidenza futura o le loro probabili conseguenze.\cite{undici}		
+\end{itemize}
+I sistemi informatici forniscono servizi sempre più sofisticati e per questo richiedono standard qualitativi sempre più elevati. Nel settore ferroviario le principali normative che sono state varate in ambito europeo sono le seguenti:
+\begin{itemize}
+	\item EN 50126: stabilisce delle linee guida per la realizzazione dell'attività RAMS (Reliability-Availability-Mantainability-Safety) lungo tutto il ciclo di vita di un prodotto ferroviaro. Questa normativa è da ritenersi applicabile ad agni tipo di prodotto destinato ad operare nel settore ferroviario, si tratti di un impianto fisso, di un treno oppure anche solo di un impianto che lo compone. Dato il suo carattere generale, la normativa non dà elementi specifici nè tantomeno esprime requisiti quantitativi. 
+	\item EN50128: relativa allo sviluppo di software per applicazioni di sistema.
+	\item EN50129: inerente allo sviluppo di apparecchiature elettriche/elettroniche di sicurezza per il segnalamento ferroviario.
+	\item EN50121: riguarda le relazioni tra i sistemi ferroviari ed il mondo esterno, con particolare riguardo alla compatibilità elettromagnetica.
+	\item EN50155: inerente le condizioni del materiale elettico utilizzato nelle fasi di sviluppo, costruzione e testing.
+\end{itemize}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.8]{img/diagstandard}
+	\caption{Diagramma EN 50 126}
+\end{figure}
+Nel diagramma sono riportate le fasi del ciclo di vita relative alla normativa EN50126. 
+ Le prime fasi hanno come obiettivo quello di definire le funzioni del sistema, l'interazione con l'ambiente esterno e le interfacce. Inoltre devono essere pianificate le attività di safety e di verifica e validazione. Le normative EN50128 e EN50129 vengono utilizzate in particolare nella fase 6 (Design and implementation): in questa fase viene definita l'architettura dei sottosistemi e inoltre viene affrontato lo sviluppo hardware e software.\\
+ Lo standard EN50126 descrive gli elementi chiave che devono essere definiti per gestire la safety di un sistema:
+ \begin{itemize}
+ 	\item politica generale sulla safety;
+ 	\item piano di safety;
+ 	\item registro degli azzardi;
+ 	\item controlli interni al sistema;
+ 	\item sistema per riportare i fallimenti;
+ 	\item sistema per la gestione delle azioni correttive;
+ 	\item processo di valutazione dei rischi per individuare gli azzardi.
+ \end{itemize}
+Tale normativa, come tante altre in diversi ambiti, richiede che prima che il sistema inizi a operare, tutti i rischi siano stati misurati e valutati e che siano considerati tollerabili.\\
+Il rischio è quindi l'unità di misura del sistema di gestione della safety. Misurare un rischio non è semplice, non esiste infatti uno strumento diretto per effettuare tale operazione. E' possibile però utilizzare due approcci indiretti:
+\begin{itemize}
+	\item La statistica, per misurare i rischi del passato;
+	\item L'analisi dei rischi, per predirre i rischi del futuro.
+\end{itemize}
+Ovviamente la nostra attenzione si concentra sull'analisi dei rischi, con lo scopo di evidenziare le problematiche a cui un certo sistema può andare incontro. \cite{undici}

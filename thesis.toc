@@ -1,0 +1,28 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\vspace {-\cftbeforepartskip }
+\contentsline {chapter}{\numberline {1}Introduzione}{7}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Gestione dei rischi nei sistemi informatici}{8}{section.1.1}% 
+\contentsline {chapter}{\numberline {2}L'analisi dei rischi}{13}{chapter.2}% 
+\contentsline {subsection}{\numberline {2.0.1}Il processo per la valutazione del rischio}{17}{subsection.2.0.1}% 
+\contentsline {chapter}{\numberline {3}L'apparato IMR (Interfaccia Mobile Remota)}{21}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Apparati centrali}{22}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}L'apparato IMR}{22}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Architettura IMR}{23}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Tablet Operatore}{23}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Server IMRG}{24}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Server IMRW}{24}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Server IMRS}{25}{subsection.3.3.4}% 
+\contentsline {section}{\numberline {3.4}Procedura di Connessione}{25}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Funzionalit\`a del Terminale Operatore}{26}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Il piano schematico}{28}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}Il quadro luminoso}{28}{subsection.3.4.3}% 
+\contentsline {chapter}{\numberline {4}Hazard analysis dell'Apparato IMR}{31}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Autenticazione Tablet e Scelta Stazione}{31}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Rischi prima parte}{33}{subsection.4.1.1}% 
+\contentsline {section}{\numberline {4.2}Login IMR}{33}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Rischi seconda parte}{34}{subsection.4.2.1}% 
+\contentsline {section}{\numberline {4.3}Visualizzazione Terminale Operatore (TO)}{34}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Rischi terza parte}{35}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}Esecuzione comando AM}{35}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}{35}{section.4.5}% 
