@@ -1,9 +1,27 @@
 \chapter{Hazard analysis dell'Apparato IMR}
 
-In questo capitolo viene riportata l'analisi dei rischi vera e propria. Sono state valutate tutte le situazioni pericolose e i rischi associati e sono state individuate mitigazioni che permettono di ridurre la probabilità di occorrenza degli hazards a un livello accettabile,
-aumentando la safety del sistema. Come suggerito dalla tecnica HAZOP, il sistema viene suddiviso in più parti e per ognuna di esse viene innanzitutto definito l'intento progettuale.\\
-In seguito, vengono selezionati gli elementi delle parti e per ognuno di essi vengono applicate le parole guida elencate nei capitoli precedenti in ogni loro interpretazione. Se tale procedura evidenzia delle critica, verranno indagate le rispettive cause e conseguenze.\\
-Per ogni rischio evidenziato verranno riportati la relativa frequenza di occorrenza e severità dell'azzardo; dall'unione di queste due informazioni verrà ricavata la valutazione dell'azzardo in questione; se il livello di rischio è trascurabile o tollerabile non sarà necessario individuare la mitigazione. Al contrario, se il livello del rischio è indesiderabile o intollerabile verrà riportato un appropriato meccanismo di protezione o delle indicazioni atte a risolvere la problematica rilevata.\\Una volta che verranno applicate le interpretazioni di tutte le parole guida a tutti gli elementi progettuali, la sezione sarà contrassegnata come completata e si passerà ad esaminare le parti successive.\\ Tutte le informazioni relativi all'Hazard analysis sono riportate in un file Excel, con lo scopo di tener traccia di tutte le cause, conseguenze e mitigazioni rilevate. In tale file excel ogni azzardo viene contrassegnato in maniera univoca da un id.
+In questo capitolo viene riportata l'analisi dei rischi vera e propria. Sono state studiate tutte le situazioni pericolose e i rischi associati e sono state individuate mitigazioni per permettere di ridurre la probabilità di occorrenza degli hazards a un livello accettabile, aumentando la safety del sistema. Come suggerito dalla tecnica HAZOP, il sistema viene suddiviso in più parti e per ognuna di esse viene innanzitutto definito l'intento progettuale.\\
+In seguito, vengono selezionati gli elementi delle parti e per ognuno di essi vengono applicate le parole guida elencate nei capitoli precedenti in ogni loro interpretazione. Se tale procedura evidenzia delle criticità, verranno indagate le rispettive cause e conseguenze.\\
+Per ogni rischio evidenziato verranno riportati la frequenza di occorrenza e la severità dell'azzardo; dall'unione di queste due informazioni verrà ricavata la valutazione dell'azzardo in questione. Se il livello di rischio è trascurabile o tollerabile non sarà necessario individuare la mitigazione. Al contrario, se il livello del rischio è indesiderabile o intollerabile, verrà riportato un appropriato meccanismo di protezione o delle indicazioni atte a risolvere la problematica rilevata.\\Una volta che verranno applicate le interpretazioni di tutte le parole guida a tutti gli elementi progettuali, la sezione sarà contrassegnata come completata e si passerà ad esaminare le parti successive.\\ Tutte le informazioni relative all'Hazard analysis sono riportate in un file Excel con lo scopo di tener traccia di tutte le cause, conseguenze e mitigazioni rilevate. In tale file excel ogni azzardo viene contrassegnato in maniera univoca da un id in modo tale da riuscire a orientarsi nella tabella.\\
+
+\section{Schema funzionale}
+
+Per riuscire a comprendere a pieno tutti i compiti e le operazioni che devono essere effettuate dai componenti presenti nell'apparato IMR è stato necessario utilizzare uno schema funzionale. Tale schema descrive graficamente tutti gli attori del sistema e i rispettivi ruoli: in verde sono riportati i componenti, in rosso i blocchi che descrivono operazioni critiche e in blu i blocchi che descrivono operazioni non critiche. 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.6]{img/schematablet}
+	\caption{Schema funzionale Tablet Operatore e AM}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.6]{img/schemaimrw}
+	\caption{Schema funzionale IMRW, IMRS, DM e IMRG}
+\end{figure}
+\newline
+\newline
+\newline
+\newline
+\newline
 
 \section{Autenticazione Tablet e Scelta Stazione}
 
@@ -22,13 +40,20 @@ Durante questa fase i componenti attivi sono:
 \end{figure}
 Come viene evidenziato dal sequence diagram questa sezione può essere divisa in due sottosezioni:
 \begin{itemize}
-	\item loop Autenticazione;
+	\item loop autenticazione;
 	\item scelta stazione.
 \end{itemize}
 L'autenticazione al dispositivo è la prima operazione che l'addetto manutenzione deve effettuare, durante questa fase le credenziali vengono verificate direttamente dal Tablet.
-Il server IRMG sarà presente solo in questa fase e nella successiva, in quanto il suo unico ruolo è quello di reindirizzare la connessione verso il server IRM locale e di memorizzare le chiavi pubbliche dell'AM. La reindirizzazione all'IMRW avviene immediatamente dopo la scelta della stazione da parte dell'addetto manutenzione.\\
+Il server IRMG sarà presente solo in questa fase e nella successiva, in quanto il suo unico ruolo è quello di reindirizzare la connessione verso il server IRM locale e di memorizzare le chiavi pubbliche dell'AM. La reindirizzazione all'IMRW avviene immediatamente dopo la scelta della stazione da parte dell'addetto manutenzione.
 
-\subsection{Rischi prima parte}
+\subsection{Rischi individuati}
+
+Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'utilizzo delle parole guida viste in precedenza. Tale analisi ha evidenziato quasi tutti rischi \textit{tollerabili}, infatti molto spesso la severità di suddetti rischi è stata classificata come \textit{insignificante}, in quanto gli azzardi non comportano problemi per la safety. \\ 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{img/exceluno}
+	\caption{Esempio hazard analysis prima fase}
+\end{figure}
 
 \section{Login IMR}
 
@@ -46,8 +71,7 @@ Nella fase di autenticazione intervengono:
 	\item Server IRMW;
 	\item Server IMRS.
 \end{itemize}
-L'operazione di autenticazione coinvolge praticamente tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet. IMRS è un server sicuro progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.
-
+L'operazione di autenticazione coinvolge praticamente tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet se l'utente è autorizzato. IMRS è un server sicuro, progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.
 
 \subsection{Rischi seconda parte}
 
