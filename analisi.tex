@@ -48,22 +48,22 @@ Il server IRMG sarà presente solo in questa fase e nella successiva, in quanto i
 
 \subsection{Rischi individuati}
 
-Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'utilizzo delle parole guida viste in precedenza. Tale analisi ha evidenziato quasi tutti rischi \textit{tollerabili}, infatti molto spesso la severità di suddetti rischi è stata classificata come \textit{insignificante}, in quanto gli azzardi non comportano problemi per la safety. \\ 
+Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'utilizzo delle parole guida. Tale analisi ha evidenziato quasi tutti rischi \textit{tollerabili}, infatti molto spesso la severità di suddetti rischi è stata classificata come \textit{insignificante}, in quanto gli azzardi non comportano problemi per la safety. Tra i rischi \textit{intollerabili} individuati in questa sezione del sequence diagram riportiamo il caso in cui l'AM venga reindirizzato su un server che potrebbe offrire un'interfaccia simile a quella attesa offerta da IMRG, ciò potrebbe indurre l'AM a condividere alcune informazioni personali come le credenziali per l'accesso. A questo punto il server dell'attaccante potrebbe funzionare da man-in-the middle tra l'AM ed il vero server.\\
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.5]{img/exceluno}
-	\caption{Esempio hazard analysis prima fase}
+	\caption{Sezione hazard analysis prima fase}
 \end{figure}
 
 \section{Login IMR}
 
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.7]{img/sdsecondo}
 	\caption{Sequence diagram seconda fase}
 \end{figure}
 
-Nella fase di autenticazione intervengono: 
+Nella fase di autenticazione da parte dell'AM all'apparato IMR intervengono: 
 \begin{itemize}
 	\item Addetto manutenzione;
 	\item Tablet;
@@ -74,17 +74,23 @@ Nella fase di autenticazione intervengono:
 L'operazione di autenticazione coinvolge praticamente tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet se l'utente è autorizzato. IMRS è un server sicuro, progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.
 
 \subsection{Rischi seconda parte}
+I rischi individuati in questa sezione non coinvolgono la safety del sistema. Se l'AM non riesce ad autenticarsi all'IMR locale e quindi non riesce a svolgere le sue mansioni per qualunque causa (errore umano, errore accidentale sul server, attacco esterno ecc..), si verifica un problema per la availability e la security del sistema ma non per la safety, quindi tali rischi vengono classificato come \textit{tollerabili}.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{img/exceldue}
+	\caption{Sezione hazard analysis seconda fase}
+\end{figure}
 
 \section{Visualizzazione Terminale Operatore (TO)}
 
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.7]{img/sdterzo}
 	\caption{Sequence diagram terza fase}
 \end{figure}
 
-Durante le operazioni relative a questa fase possiamo individuare: 
+Durante le operazioni relative a questa fase intervengono i seguenti componenti: 
 \begin{itemize}
 	\item Addetto manutenzione;
 	\item Tablet;
@@ -97,7 +103,7 @@ Anche qui, è possibile rilevare due sottosezioni:
 	\item visualizzazione Terminale Operatore TO;
 	\item selezione <Ente> specifico.
 \end{itemize}
-Infatti, dopo aver verificato la correttezza delle credenziali, viene inviata dall'IMRS al Tablet la pagina web del Terminale Operatore che riporta tutti gli Enti abilitati per quella determinata stazione.\\ L'addetto manutenzione può quindi iniziare a inviare i comandi opportuni per le operazioni di manutenzione. L'AM in questa fase è infatti in grado di premere i bottoni degli <Enti> di stazione e l'IMRS inoltrerà la relativa pagina Web TO con lista <Tipo Ente> esistenti nella Stazione, Stato, QL, e i comandi relativi all'Ente specifico.
+Infatti, dopo aver verificato la correttezza delle credenziali, viene inviata dall'IMRS al Tablet la pagina web del Terminale Operatore che riporta tutti gli Enti abilitati per quella determinata stazione.\\ L'addetto manutenzione può quindi iniziare a inviare i comandi opportuni per le operazioni di manutenzione. L'AM in questa fase è in grado di premere i bottoni degli <Enti> di stazione e l'IMRS inoltrerà la relativa pagina Web TO con lista <Tipo Ente> esistenti nella Stazione, Stato, QL, e i comandi relativi all'Ente specifico.
 
 
 \subsection{Rischi terza parte}
