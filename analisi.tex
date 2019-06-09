@@ -46,9 +46,30 @@ Come viene evidenziato dal sequence diagram questa sezione può essere divisa in 
 L'autenticazione al dispositivo è la prima operazione che l'addetto manutenzione deve effettuare, durante questa fase le credenziali vengono verificate direttamente dal Tablet.
 Il server IRMG sarà presente solo in questa fase e nella successiva, in quanto il suo unico ruolo è quello di reindirizzare la connessione verso il server IRM locale e di memorizzare le chiavi pubbliche dell'AM. La reindirizzazione all'IMRW avviene immediatamente dopo la scelta della stazione da parte dell'addetto manutenzione.
 
-\subsection{Rischi individuati}
+\subsection{Rischi individuati nella prima sezione}
 
-Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'utilizzo delle parole guida. Tale analisi ha evidenziato quasi tutti rischi \textit{tollerabili}, infatti molto spesso la severità di suddetti rischi è stata classificata come \textit{insignificante}, in quanto gli azzardi non comportano problemi per la safety. Tra i rischi \textit{intollerabili} individuati in questa sezione del sequence diagram riportiamo il caso in cui l'AM venga reindirizzato su un server che potrebbe offrire un'interfaccia simile a quella attesa offerta da IMRG, ciò potrebbe indurre l'AM a condividere alcune informazioni personali come le credenziali per l'accesso. A questo punto il server dell'attaccante potrebbe funzionare da man-in-the middle tra l'AM ed il vero server.\\
+Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'utilizzo delle parole guida. Tale analisi ha evidenziato quasi tutti rischi \textit{tollerabili}, infatti molto spesso la severità di suddetti rischi è stata classificata come \textit{insignificante}, in quanto gli azzardi non comportano problemi per la safety, tra i quali:
+\begin{itemize}
+	\item a causa di un attacco esterno o di un errore accidentale del sistema IMRG, il Tablet potrebbe non ricevere la pagina Web per scegliere la stazione e quindi non riuscire a effettuare le operazioni di manutenzione;
+	\item la pagina Web per scegliere la stazione potrebbe arrivare al tablet con eccessivo ritardo e l'AM dovrà attendere prima di poter selezionare la stazione desiderata;
+	\item a causa di un attacco esterno o di un errore accidentale del sistema IMRG potrebbe non venir inviato l'indirizzo relativo all'IMRW al Tablet che quindi non sarà in grado di connettersi al server relativo alla stazione in oggetto e non sarà possibile avviare il lavoro;
+	\item a causa di un attacco esterno o di un errore accidentale del sistema IMRG potrebbe venir inviato al Tablet un indirizzo relativo al server IMRW sbagliato, quindi il Tablet non riuscirà a connettersi al server relativo alla stazione in oggetto e non sarà possibile avviare il lavoro;
+	\item a causa di un errore umano, o del touchscreen del tablet, potrebbe venir selezionata la stazione sbagliata; in questo caso non si avvia la configurazione; 
+	\item a causa di un attacco esterno potrebbe venir recapitata all'AM una lista di stazioni parziale e potrebbe non includere la stazione obiettivo; l'AM non sarebbe così in grado di autenticarsi al server locale IMR ed eseguire le sue mansioni.	
+\end{itemize}
+
+
+ Di seguito sono invece riportati i rischi \textit{intollerabili} individuati in questa sezione:
+ \begin{itemize}
+ 	\item un attaccante potrebbe creare un messaggio per il Tablet oppure alterarne uno già esistente con lo scopo di indirizzare il Tablet verso un server IMRW diverso da quello relativo alla stazione in oggetto. Il Tablet quindi verrebbe reindirizzato su un server che potrebbe offrire una interfaccia simile a quella attesa, ciò potrebbe indurre l'AM a immettere le sue credenziali. Il server dell'attaccante potrebbe funzionare da man-in-the middle tra l'AM ed il vero server;
+ 	\item un attaccante potrebbe inviare al Tablet una pagina web  di scelta stazione diversa per influire negativamente sul sistema (creando un nuovo messaggio oppure alterando uno già esistente). In questo modo il Tablet quindi verrebbe reindirizzato su un server che potrebbe offrire una interfaccia simile a quella attesa, ciò potrebbe indurre l'AM a immettere le sue credenziali. L'attaccante viene a conoscenza di informazioni riservate che può utilizzare per influire negativamente sul sistema.
+ 	\item a causa di un errore accidentale del server IMRG, di un attacco esterno o di un errore di rete generico, il Tablet potrebbe non riescire a contattarsi al server IMRG. In tal caso la stazione non potrà essere selezionata;
+ 	
+ 	
+ 	
+ \end{itemize}
+ 
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.5]{img/exceluno}
@@ -56,12 +77,6 @@ Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'u
 \end{figure}
 
 \section{Login IMR}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.7]{img/sdsecondo}
-	\caption{Sequence diagram seconda fase}
-\end{figure}
 
 Nella fase di autenticazione da parte dell'AM all'apparato IMR intervengono: 
 \begin{itemize}
@@ -71,10 +86,21 @@ Nella fase di autenticazione da parte dell'AM all'apparato IMR intervengono:
 	\item Server IRMW;
 	\item Server IMRS.
 \end{itemize}
-L'operazione di autenticazione coinvolge praticamente tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet se l'utente è autorizzato. IMRS è un server sicuro, progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.7]{img/sdsecondo}
+	\caption{Sequence diagram seconda fase}
+\end{figure}
+L'operazione di autenticazione coinvolge quasi tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet se l'utente è autorizzato. IMRS è un server sicuro, progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.
 
-\subsection{Rischi seconda parte}
-I rischi individuati in questa sezione non coinvolgono la safety del sistema. Se l'AM non riesce ad autenticarsi all'IMR locale e quindi non riesce a svolgere le sue mansioni per qualunque causa (errore umano, errore accidentale sul server, attacco esterno ecc..), si verifica un problema per la availability e la security del sistema ma non per la safety, quindi tali rischi vengono classificato come \textit{tollerabili}.
+\subsection{Rischi individuati nella seconda sezione}
+Quasi tutti i rischi individuati in questa sezione non coinvolgono la safety del sistema. Se l'AM non riesce ad autenticarsi all'IMR locale e quindi non riesce a svolgere le sue mansioni per qualunque causa (errore umano, errore accidentale sul server, attacco esterno ecc..), si verifica un problema per la availability e la security del sistema ma non per la safety, quindi tali rischi vengono classificato come \textit{tollerabili}.\\ Sono stati evidenziati dall'analisi i seguenti azzardi:
+\begin{itemize}
+	\item a causa di un errore accidentale del server IMRG, di un attacco esterno o di un errore di rete generico, il Tablet potrebbe non riescire a contattarsi al server IMRG. In tal caso le chiavi pubbliche non potranno essere recuperate;
+	\item se a causa di un errore umano, l'AM inserisce credenziali errate oppure non le ricorda, non sarà possibile effettuare l'operazione di autenticazione e l'AM non potrà effettuare le sue mansioni;
+	\item un attaccante potrebbe riuscire a rubare le credenziali nella non-safe area e appropriarsene con lo scopo di accedere al sistema, questo rischio ovviamente viene classificato come \textit{intollerabile} e sarà quindi opportuno invididuare un'appropriata mitigazione.
+	
+\end{itemize}
 
 \begin{figure}[htbp]
 	\centering
@@ -84,11 +110,6 @@ I rischi individuati in questa sezione non coinvolgono la safety del sistema. Se
 
 \section{Visualizzazione Terminale Operatore (TO)}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.7]{img/sdterzo}
-	\caption{Sequence diagram terza fase}
-\end{figure}
 
 Durante le operazioni relative a questa fase intervengono i seguenti componenti: 
 \begin{itemize}
@@ -97,20 +118,180 @@ Durante le operazioni relative a questa fase intervengono i seguenti componenti:
 	\item Server IRMW;
 	\item Server IMRS.
 \end{itemize}
-
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.7]{img/sdterzo}
+	\caption{Sequence diagram terza fase}
+\end{figure}
 Anche qui, è possibile rilevare due sottosezioni:
 \begin{itemize}
 	\item visualizzazione Terminale Operatore TO;
 	\item selezione <Ente> specifico.
 \end{itemize}
-Infatti, dopo aver verificato la correttezza delle credenziali, viene inviata dall'IMRS al Tablet la pagina web del Terminale Operatore che riporta tutti gli Enti abilitati per quella determinata stazione.\\ L'addetto manutenzione può quindi iniziare a inviare i comandi opportuni per le operazioni di manutenzione. L'AM in questa fase è in grado di premere i bottoni degli <Enti> di stazione e l'IMRS inoltrerà la relativa pagina Web TO con lista <Tipo Ente> esistenti nella Stazione, Stato, QL, e i comandi relativi all'Ente specifico.
+Infatti, dopo aver verificato la correttezza delle credenziali, viene inviata dall'IMRS al Tablet la pagina web del Terminale Operatore che riporta tutti gli Enti abilitati per quella determinata stazione.\\ L'AM in questa fase è in grado di selezionare i bottoni degli <Enti> di stazione e l'IMRS inoltrerà la relativa pagina Web TO con lista <Tipo Ente> esistenti nella Stazione, Stato, QL, e i comandi relativi all'Ente specifico.
 
 
-\subsection{Rischi terza parte}
-
-
+\subsection{Rischi individuati nella terza sezione}
+Le uniche operazioni che l'AM può effettuare in questa sezione sono quindi: "Pressione bottone <Ente>" e "Pressione specifico <Ente> di Stazione". L'IMRS si occuperà invece di recuperare la lista degli enti esistenti per quella stazione, lo stato degli enti, la porzione di QL specifica e i comandi abilitati. Poichè in questa fase l'AM non si occupa di inviare nè comandi critici nè informazioni sensibili, non vengono evidenziate particolari pericoli per la safety del sistema, tra i principali:
+\begin{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\item a causa di un attacco esterno o di un errore di comunicazione i messaggi inoltrati dall'IMRW all'IMRS, contenenti le richieste degli enti abilitati per stazione, potrebbero venir eliminati, creati, ritardati o ripetuti. Ciò comporterebbe alcuni malfunzionamenti ma non andrebbe a impattare la safety del sistema;
+	\item a causa di un attacco esterno o di un errore di comunicazione i messaggi inoltrati dall'IMRS all'IMRW, contenenti la lista degli enti abilitati per stazione, potrebbero venir eliminati, creati, ritardati o ripetuti. Ciò comporterebbe alcuni malfunzionamenti ma non andrebbe a impattare la safety del sistema;
+	\item a causa di un errore del touchscreen o di un errore umano potrebbe l'AM non riuscire a visualizzare la lista degli elementi per l'ente richiesto;
+	\item a causa di un errore del touchscreen o di un errore umano potrebbe l'AM non riuscire a visualizzare lo stato dell'ente specifico.	
+\end{itemize}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{img/exceltre}
+	\caption{Sezione Hazard Analysis terza fase}
+\end{figure}
 \section{Esecuzione comando AM}
 
-NON VA BENE IL SEQUENCE DIAGRAM
+Questa sezione si occupa di analizzare la fase in cui l'AM vuole eseguire un comando. I componenti che hanno un ruolo attivo sono:
+\begin{itemize}
+	\item Addetto manutenzione (AM);
+	\item Tablet Operatore;
+	\item Server IMRW;
+	\item Server IMRS;
+	\item ACC;
+	\item Dirigente movimento (DM);
+\end{itemize}
+Questa è l'unica fase in cui è presente anche il Dirigente movimento, con il ruolo di autorizzare l'esecuzione dei comandi critici. \\
+In questa fase il Tablet si occupa di inoltrare i comandi all'IMRW, che di conseguenza li comunicherà al Server locale IMRS; tale server sicuro, appartenente alla safe area, trasmette al nucleo in sicurezza le operazioni da eseguire. \\ Il nucleo in sicurezza, dopo aver attuato il comando, invia i dati sullo stato del sistema all'IMRS che eventualmente si occuperà di elaborarli. Le informazioni verranno in seguito inviate al Tablet, in modo tale che l'AM venga informato dello stato del sistema.
+
+\section{Rischi individuati nella quarta sezione}
+In questa fase viene descritta la procedura più delicata, infatti vengono trasportate informazioni sensibili che potrebbero essere utilizzate da un attaccante per influire negativamente sul sistema. L'analisi ha portato a individuare varie situazioni indesiderabili, quali:
+\begin{itemize}
+	\item a causa di un errore umano (es. bottoni troppo vicini sul Tablet), l'AM, nel tentativo di premere il bottone per eseguire un comando, potrebbe cliccare erroneamente su un altro. In questo caso quindi l'AM inoltra al server IMRS un comando diverso da quello che intendeva eseguire;
+	\item a causa di un errore del touchscreen del Tablet, il dispositivo potrebbe recepire la pressione di un pulsante diverso da quello effettivamente premuto dall'AM. In questo caso quindi viene inoltrato al server IMRS un comando diverso da quello che l'AM avrebbe voluto eseguire;
+	\item a causa di un attacco esterno, potrebbe essere alterato il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM sul Tablet. Il manutentore potrebbe andare nella zona (la vede esclusa), con il rischio che i treni passino dalla zona. In questo caso l'attaccante dovrebbe anche modificare la notifica di conferma del comando;
+	\item a causa di un attacco esterno, potrebbe essere eliminato il messaggio contenente le informazioni circa il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM sul Tablet. Il manutentore potrebbe andare nella zona (la vede esclusa), con il rischio che i treni passino dalla zona. In questo caso l'attaccante dovrebbe anche creare la notifica di conferma del comando;
+	\item un attaccante potrebbe modificare l'orologio del Tablet per far sembrare la porzione di QL recente quando in realtà non lo è. Il manutentore potrebbe essere a rischio, non avendo la possibilità di vistalizzare la lista aggiornata dei comandi;
+	\item un attaccante potrebbe voler eliminare un messaggio nella comunicazione Tablet-Server IMRW per influire negativamente sul sistema. Ciò causerebbe possibili perdite di dati sensibili e malfunzionamenti di procedure che richiedono l'esecuzione di determinate azioni in sequenza;
+	\item a causa di un errore nel canale o sul Tablet o sul dispositivo, potrebbe venir eliminato un messaggio tra Tablet e Server IMRW. Ciò causerebbe possibili perdite di dati sensibili e malfunzionamenti di procedure che richiedono l'esecuzione di determinate azioni in sequenza;
+	\item un attaccante potrebbe voler duplicare un messaggio nella comunicazione Tablet-Server IMRW per influire negativamente sul sistema. Si ri-presenta l'informazione già visualizzata in un momento precedente, che potrebbe, nel caso peggiore, trarre in inganno l'AM sulla situazione di inclusione/esclusione;
+	\item un attaccante potrebbe voler creare un nuovo messaggio nella comunicazione Tablet-Server IMRW per influire negativamente sul sistema. Il nuovo messaggio potrebbe venire riconosciuto come legittimo, causando eventualmente gravi problemi al sistema sulla base del suo contenuto (incluso trarre in inganno l'AM rispetto a inclusione/esclusione);
+	\item a causa di un attacco esterno o di un errore di rete un messaggio nel canale Tablet-IMRW potrebbe venir inviato con ritardo. Il messaggio potrebbe non arrivare in tempo all'AM o al Server. Senza l'utilizzo di un protocollo adeguato si può perdere traccia dei messaggi inviati e che poi sono stati ricevuti in ritardo;
+	\item a causa di un attacco esterno, di un errore sul server o sul dispositivo, un messaggio nella comunicazione Tablet-Server IMRW potrebbe venire alterato. Il nuovo messaggio potrebbe venire riconosciuto come legittimo, causando eventualmente gravi problemi al sistema sulla base del suo contenuto (incluso trarre in inganno l'AM rispetto a inclusione/esclusione);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{itemize}
+
+Sono stati invece classificati come tollerabili i seguenti azzardi:
+
+\begin{itemize}
+	\item a causa di un errore del touchscreen del Tablet o del dispositivo, l'AM potrebbe non essere in grado di premere il pulsante per effettuare il comando;
+	\item a causa di un errore umano o per l'indisponibilità della rete telefonica (per malfunzionamento o attacco), L'AM potrebbe non riuscire a effettuare la telefonata al DM (o dimenticarsene); secondo la procedura, in mancanza di conferma del DM, il comando non viene eseguito dal nucleo in sicurezza.
+	\item a causa di un errore umano o per l'indisponibilità della rete telefonica (per malfunzionamento o attacco), L'AM potrebbe non riuscire a scambiare telefonicamente tutte le informazioni con il DM. L'AM è costretto a richiamare il DM;
+	\item a causa di un errore umano, dopo che l'AM ha chiamato il DM per avvisarlo del comando che vuole portare a termine, il DM potrebbe non autorizzare tale comando. Secondo la procedura, in mancanza di conferma del DM, il comando non viene eseguito dal nucleo in sicurezza;
+	\item a causa di un errore generico del Tablet o della comunicazione, il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM potrebbe non venir comunicato al server IMRW. In questo caso non verrà ricevuta la conferma di esecuzione del comando dall'AM;
+	\item a causa di un errore generico del Tablet o della comunicazione, il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM potrebbe venir comunicato come duplicato. L'operatore può ricevere una conferma o meno dell'esecuzione del comando, comunque consistente con lo stato della linea;
+	\item a causa di un errore generico del Tablet o della comunicazione, il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM potrebbe venir comunicato con ritardo. Essendo un'esclusione zona, non verrà ricevuta la conferma di esecuzione del comando;
+
+	
+	
+	
+	
+\end{itemize}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\item un attaccante potrebbe voler creare un messaggio o alterarne uno diretto all'IMRS o all'IMRW contenente informazioni relative l'esecuzione di un comando. Il nuovo messaggio potrebbe venire riconosciuto come legittimo, causando eventualmente gravi problemi al sistema sulla base del suo contenuto;
+	\item un attaccante potrebbe voler ritardare un messaggio inviati dal server al Tablet contenente informazioni sulla corretta esecuzione di un comando; il messaggio potrebbe arrivare con eccessivo ritardo al Tablet e dare informazioni non più aggiornate all'AM;
+	\item a causa di un errore accidentale del sistema IMRW i dati provenienti dal server IMRS potrebbero non venire assemblati in modo corretto (potrebbero venire alterati alcuni dati, eliminati o creati dei nuovi) e comunicare quindi informazioni non esatte all'AM;
+	\item a causa di un errore accidentale il sistema IMRS potrebbe non generare in modo pertinente le immagini da inoltrare a IMRW (potrebbero essere immesse informazioni aggiuntive, eliminati dati necessari, alcune informazioni potrebbero venir generate in modo parziale o altre modificate);
+	\item a causa di un errore accidentale del sistema IMRS potrebbero verificarsi dei problemi nell'invio di informazioni al nucleo in sicurezza. Potrebbe infatti venir accidentalmente creato un messaggio contenente un comando, ritardato, modificato o addirittura venir eliminato un comando già esistente, causando gravi malfunzionamenti all'interno del sistema;
+	\item a causa di un errore accidentale del sistema IMRS potrebbero verificarsi dei problemi nella ricezioni di informazioni dal nucleo in sicurezza. Potrebbero infatti venir accidentalmente create, modificate, ritardate o eliminate informazioni sensibili; se ciò accadesse l'AM non sarebbe in grado di leggere informazioni corrette e complete circa lo stato del sistema;
+	\item a causa di un errore umano, o del touchscreen del tablet difettoso, l'AM potrebbe sbagliare a premere un pulsante e inoltrare quindi al server IMRS un comando diverso da quello che avrebbe voluto eseguire;
+	\item un attaccante potrebbe voler fornire informazioni errate all'AM circa lo stato del sistema e quindi alterare, creare, eliminare le informazioni ricevute dal Tablet o dal server IMRW. In questo modo potrebbero crearsi una serie di situazioni pericolose per il manutentore, ad esempio potrebbe recarsi in una zona, credendo erroneamente che fosse esclusa, con il rischio che i treni passino di lì;
+	\item a causa di un attacco esterno o di un errore accidentale un messaggio contenente informazioni circa l'esecuzione di un comando inoltrato dal Tablet e successivamente dal server IMRW potrebbe venir eliminato senza che l'AM abbia notizie sull'effettiva esecuzione o meno del comando;
+	\item a causa di un errore del server IMRS un comando da inviare al nucleo potrebbe venir eliminato, quindi non viene eseguito dal sistema.
+	
+		
+\end{itemize}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{img/excelquattro}
+	\caption{Sezione Hazard Analysis quarta fase}
+\end{figure}
 
 \section{Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}
+
+Questa sezione si occupa dare informazio all'AM circa lo stato del sistema da vari punti di vista. Come ho riportato nel capitolo precedente, oltra al Terminale Operatore, è possibile accedere anche alla schermata di Log, al Piano schematico e al Quadro luminoso. Tutte queste schermate offrono elementi addizionali che possono essere utilizzati dall'AM per effettuare il proprio lavoro in maniera più completa.\\
+In questa sezione i componenti che operano sono:
+\begin{itemize}
+	\item Addetto manutenzione (AM);
+	\item Tablet Operatore;
+	\item server IMRW;
+	\item Server IMRS.
+\end{itemize}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{img/sdsesto}
+	\caption{Sequence diagram quinta fase}
+\end{figure}
+Ogni volta che l'AM preme l'icona relativa al Quadro luminoso o alla schermata Log o al Piano schematico, la richiesta viene inoltrata al server IMRW e infine al server IMRS che si occupa di restituire le informazioni richieste.\\ Una porzione del quadro luminoso è presente anche nella schermata del Terminale operatore, quindi ogni volta che viene disattivata o attivata una zona, viene inviata una richiesta all'IMRS per ottenere il quadro luminoso della zona in oggetto.
+\section{Rischi quinta fase}
+Questa sezione non presenta particolari problemi per quanto riguarda la safety del sistema. Infatti, se una richiesta non viene inoltrata dal tablet, a causa di un attacco esterno oppure di un errore accidentale del sistema, non viene compromessa la sicurezza dell'AM. Invece, se viene creata accidentalmente o da un attaccante una richiesta per visualizzare il piano schematico, il quadro luminoso o la schermata di log, la richiesta è eseguita, ma non prevede l'esecuzione di comandi critici per la safety, quindi tali rischi vengono tutti classificati come \textit{tollerabili}.\\
+Al contrario, se una richiesta per visionare una schermata viene modficata modificata con un'altra richiesta critica per la safety, inviata ed eseguita dal nucleo in sicurezza viene a crearsi un grave malfunzionalmento del sistema, tale rischio è classificato come \textit{intollerabile} e sarà opportuno individuare una mitigazione.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{img/excelcinque}
+	\caption{Sezione hazard analysis quinta fase}
+\end{figure}
+
+
+
+
+
+
+
+
+
