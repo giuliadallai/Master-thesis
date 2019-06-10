@@ -23,10 +23,9 @@
 \contentsline {subsection}{\numberline {4.2.1}Rischi individuati nella prima sezione}{34}{subsection.4.2.1}% 
 \contentsline {section}{\numberline {4.3}Login IMR}{36}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Rischi individuati nella seconda sezione}{37}{subsection.4.3.1}% 
-\contentsline {section}{\numberline {4.4}Visualizzazione Terminale Operatore (TO)}{37}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Rischi individuati nella terza sezione}{39}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Esecuzione comando AM}{39}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Rischi individuati nella quarta sezione}{40}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Esecuzione comando AM}{42}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}{42}{section.4.8}% 
-\contentsline {section}{\numberline {4.9}Rischi quinta fase}{44}{section.4.9}% 
+\contentsline {section}{\numberline {4.4}Visualizzazione Terminale Operatore (TO)}{38}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Rischi individuati nella terza sezione}{40}{subsection.4.4.1}% 
+\contentsline {section}{\numberline {4.5}Esecuzione comando AM}{41}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Rischi individuati nella quarta sezione}{42}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}{49}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Rischi individuati nella quinta sezione}{50}{section.4.8}% 
