@@ -29,3 +29,7 @@
 \contentsline {section}{\numberline {4.6}Rischi individuati nella quarta sezione}{42}{section.4.6}% 
 \contentsline {section}{\numberline {4.7}Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}{49}{section.4.7}% 
 \contentsline {section}{\numberline {4.8}Rischi individuati nella quinta sezione}{50}{section.4.8}% 
+\contentsline {chapter}{\numberline {5}Mitigazioni}{53}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Utilizzo di una One Time Password}{53}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Utilizzo del protocollo PVS}{55}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Alcune buone pratiche}{56}{section.5.3}% 
