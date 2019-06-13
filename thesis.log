@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.30)  12 JUN 2019 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.30)  13 JUN 2019 08:49
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1897,37 +1897,42 @@ chapter 5.
 File: img/architdue.png Graphic file (type png)
 <use img/architdue.png>
 Package pdftex.def Info: img/architdue.png  used on input line 15.
-(pdftex.def)             Requested size: 268.87737pt x 184.81847pt.
+(pdftex.def)             Requested size: 307.29092pt x 211.2231pt.
 <img/sdesecuzione.png, id=444, 584.4234pt x 375.3222pt>
 File: img/sdesecuzione.png Graphic file (type png)
 <use img/sdesecuzione.png>
 Package pdftex.def Info: img/sdesecuzione.png  used on input line 28.
-(pdftex.def)             Requested size: 345.69862pt x 222.0166pt.
- [54 <./img/architdue.png>] [55 <./img/sdesecuzione.png>]
+(pdftex.def)             Requested size: 422.52576pt x 271.35426pt.
+
+Overfull \hbox (38.41356pt too wide) in paragraph at lines 28--29
+ [][] 
+ []
+
+[54 <./img/architdue.png>] [55 <./img/sdesecuzione.png>]
 <img/pvs.png, id=459, 544.434pt x 215.00325pt>
 File: img/pvs.png Graphic file (type png)
 <use img/pvs.png>
-Package pdftex.def Info: img/pvs.png  used on input line 57.
+Package pdftex.def Info: img/pvs.png  used on input line 58.
 (pdftex.def)             Requested size: 345.69862pt x 136.52554pt.
- [56 <./img/pvs.png (PNG copy)>]) [57]
+ [56] [57 <./img/pvs.png (PNG copy)>]) [58]
 \openout2 = `Chapters/bibliografia.aux'.
 
  (Chapters/bibliografia.tex (thesis.brf)
 \tf@brf=\write6
 \openout6 = `thesis.brf'.
 
- [58
 
-
-
-
-]
 Underfull \hbox (badness 1721) in paragraph at lines 14--14
 []\T1/pplj/m/n/12 (+20) http://www-3.unipv.it- \T1/pplj/m/it/12 (+20) Cir-co-la
 -zio-ne ed Im-pian-ti di Si-cu-rez-za e
  []
 
-) [59]
+) [59
+
+
+
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
  (thesis.aux (titlePage.aux) (intro.aux) (introhazard.aux) (IMR.aux)
@@ -1955,7 +1960,7 @@ nts/type1/public/fpl/fplrij8a.pfb><C:/Users/Giulia/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/Giulia/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/Giulia/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (61 pages, 3154954 bytes).
+Output written on thesis.pdf (61 pages, 3155236 bytes).
 PDF statistics:
  648 PDF objects out of 1000 (max. 8388607)
  146 named destinations out of 1000 (max. 500000)
