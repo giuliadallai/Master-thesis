@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.30)  13 JUN 2019 09:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.30)  1 JUL 2019 09:43
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1303,9 +1303,10 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 ("C:\Users\Giulia\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1
 .sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-) (thesis.aux (titlePage.aux) (Chapters/intro.aux)
-(Chapters/introhazard.aux) (Chapters/IMR.aux) (Chapters/analisi.aux)
-(Chapters/mitigazioni.aux) (Chapters/bibliografia.aux))
+) (thesis.aux (titlePage.aux) (Chapters/intro.aux) (Chapters/introdue.aux) (Cha
+pters/introhazard.aux) (Chapters/IMR.aux) (Chapters/analisi.aux)
+(Chapters/mitigazioni.aux) (Chapters/conclusioni.aux)
+(Chapters/bibliografia.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
@@ -1565,29 +1566,47 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 10
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-)
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
-
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 106.
+(Font)              scaled to size 9.30756pt on input line 44.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 5.10004pt on input line 106.
+(Font)              scaled to size 5.10004pt on input line 44.
  [1
 
 
 
-] [2
+])
+\tf@toc=\write4
+\openout4 = `thesis.toc'.
 
-
-]
+ [2]
 Package tocbasic Info: character protrusion at lof deactivated on input line 10
 6.
- (thesis.lof)
+ (thesis.lof
+Overfull \hbox (2.96983pt too wide) in paragraph at lines 12--12
+ [][] [][]\T1/pplj/m/n/12 (-20) Tabella per la clas-si-fi-ca-zio-ne del-le fre-
+quen-ze [[]][] []  
+ []
+
+
+Overfull \hbox (0.20221pt too wide) in paragraph at lines 25--25
+ [][] [][]\T1/pplj/m/n/12 (-20) Sequence Dia-gram fa-se Au-ten-ti-ca-zio-ne Ta-
+blet e Scel- 
+ []
+
+
+Overfull \hbox (23.13216pt too wide) in paragraph at lines 28--28
+ [][] [][]\T1/pplj/m/n/12 (-20) Sezione Ha-zard Ana-ly-sis Ese-cu-zio-ne co-man
+-do AM[] []  
+ []
+
+)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [3] [4
+ [3
+
+
+] [4
 
 
 ] [5] [6
@@ -1613,6 +1632,8 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
@@ -1622,301 +1643,317 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
 
 
-]
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 12.
+])
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [8] [9]
-<img/diagstandard.png, id=194, 410.13225pt x 413.1435pt>
-File: img/diagstandard.png Graphic file (type png)
-<use img/diagstandard.png>
-Package pdftex.def Info: img/diagstandard.png  used on input line 43.
-(pdftex.def)             Requested size: 328.10623pt x 330.51523pt.
- [10 <./img/diagstandard.png>]) [11]
-\openout2 = `Chapters/introhazard.aux'.
+ [8]
+\openout2 = `Chapters/introdue.aux'.
 
- (Chapters/introhazard.tex
-[12
+ (Chapters/introdue.tex
+chapter 2.
+[9
 
 
 
 
 ]
-chapter 2.
-[13]
-<img/parolechiave.png, id=221, 750.4035pt x 514.3215pt>
-File: img/parolechiave.png Graphic file (type png)
-<use img/parolechiave.png>
-Package pdftex.def Info: img/parolechiave.png  used on input line 22.
-(pdftex.def)             Requested size: 375.20084pt x 257.16013pt.
-
-Overfull \hbox (20.46333pt too wide) in paragraph at lines 21--23
-[] 
+Overfull \hbox (114.745pt too wide) has occurred while \output is active
+[]|[]|  
  []
 
-[14]
-<img/diagrammaesame.png, id=226, 376.40625pt x 498.06075pt>
-File: img/diagrammaesame.png Graphic file (type png)
-<use img/diagrammaesame.png>
-Package pdftex.def Info: img/diagrammaesame.png  used on input line 27.
-(pdftex.def)             Requested size: 376.40532pt x 498.05952pt.
+[10]
+<img/diagstandard.png, id=227, 410.13225pt x 413.1435pt>
+File: img/diagstandard.png Graphic file (type png)
+<use img/diagstandard.png>
+Package pdftex.def Info: img/diagstandard.png  used on input line 39.
+(pdftex.def)             Requested size: 328.10623pt x 330.51523pt.
 
-Overfull \hbox (21.66782pt too wide) in paragraph at lines 23--28
-[] 
+Overfull \hbox (114.745pt too wide) has occurred while \output is active
+ []|[]|
  []
 
-[15 <./img/parolechiave.png>] [16 <./img/diagrammaesame.png>]
-<img/valrischi.png, id=235, 399.29175pt x 482.40225pt>
-File: img/valrischi.png Graphic file (type png)
-<use img/valrischi.png>
-Package pdftex.def Info: img/valrischi.png  used on input line 43.
-(pdftex.def)             Requested size: 159.71387pt x 192.95747pt.
-<img/frequenza.png, id=236, 679.338pt x 452.28975pt>
-File: img/frequenza.png Graphic file (type png)
-<use img/frequenza.png>
-Package pdftex.def Info: img/frequenza.png  used on input line 49.
-(pdftex.def)             Requested size: 271.73038pt x 180.91269pt.
- [17]
-<img/severit.png, id=242, 730.52925pt x 444.4605pt>
-File: img/severit.png Graphic file (type png)
-<use img/severit.png>
-Package pdftex.def Info: img/severit.png  used on input line 56.
-(pdftex.def)             Requested size: 292.20651pt x 177.78105pt.
- [18 <./img/valrischi.png> <./img/frequenza.png>]
-<img/risklevel.png, id=248, 555.87675pt x 405.31425pt>
-File: img/risklevel.png Graphic file (type png)
-<use img/risklevel.png>
-Package pdftex.def Info: img/risklevel.png  used on input line 70.
-(pdftex.def)             Requested size: 222.34676pt x 162.12282pt.
-) [19 <./img/severit.png> <./img/risklevel.png>]
-\openout2 = `Chapters/IMR.aux'.
+[11 <./img/diagstandard.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
- (Chapters/IMR.tex [20
+ []
+
+<img/sil.png, id=242, 452.892pt x 254.75175pt>
+File: img/sil.png Graphic file (type png)
+<use img/sil.png>
+Package pdftex.def Info: img/sil.png  used on input line 72.
+(pdftex.def)             Requested size: 317.02223pt x 178.325pt.
+)
+Overfull \hbox (114.745pt too wide) has occurred while \output is active
+[]|[]|  
+ []
+
+[12] [13 <./img/sil.png>]
+\openout2 = `Chapters/introhazard.aux'.
+
+ (Chapters/introhazard.tex [14
 
 
 
 
 ]
 chapter 3.
-[21]
-<img/apparaticentrali.png, id=268, 412.54124pt x 275.8305pt>
-File: img/apparaticentrali.png Graphic file (type png)
-<use img/apparaticentrali.png>
-Package pdftex.def Info: img/apparaticentrali.png  used on input line 22.
-(pdftex.def)             Requested size: 206.27011pt x 137.9149pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--33
+[15]
+<img/parolechiave.png, id=272, 750.4035pt x 514.3215pt>
+File: img/parolechiave.png Graphic file (type png)
+<use img/parolechiave.png>
+Package pdftex.def Info: img/parolechiave.png  used on input line 24.
+(pdftex.def)             Requested size: 300.15608pt x 205.72496pt.
+ [16]
+<img/diagrammaesame.png, id=279, 376.40625pt x 498.06075pt>
+File: img/diagrammaesame.png Graphic file (type png)
+<use img/diagrammaesame.png>
+Package pdftex.def Info: img/diagrammaesame.png  used on input line 32.
+(pdftex.def)             Requested size: 263.48257pt x 348.64014pt.
+ [17 <./img/parolechiave.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-[22]
-<img/architettura.png, id=276, 429.40425pt x 275.8305pt>
-File: img/architettura.png Graphic file (type png)
-<use img/architettura.png>
-Package pdftex.def Info: img/architettura.png  used on input line 44.
-(pdftex.def)             Requested size: 300.58092pt x 193.08002pt.
- [23 <./img/apparaticentrali.png>] [24 <./img/architettura.png>]
-<img/procedura.png, id=287, 642.7212pt x 428.3202pt>
-File: img/procedura.png Graphic file (type png)
-<use img/procedura.png>
-Package pdftex.def Info: img/procedura.png  used on input line 84.
-(pdftex.def)             Requested size: 257.08392pt x 171.32504pt.
- [25]
-[26 <./img/procedura.png>]
-<img/interfaccia.png, id=305, 430.0065pt x 468.5505pt>
-File: img/interfaccia.png Graphic file (type png)
-<use img/interfaccia.png>
-Package pdftex.def Info: img/interfaccia.png  used on input line 121.
-(pdftex.def)             Requested size: 171.99954pt x 187.41687pt.
- [27]
-<img/pianoschematico.png, id=311, 738.3585pt x 416.757pt>
-File: img/pianoschematico.png Graphic file (type png)
-<use img/pianoschematico.png>
-Package pdftex.def Info: img/pianoschematico.png  used on input line 136.
-(pdftex.def)             Requested size: 221.50926pt x 125.02806pt.
-<img/quadrolumcom.png, id=313, 737.75626pt x 416.757pt>
-File: img/quadrolumcom.png Graphic file (type png)
-<use img/quadrolumcom.png>
-Package pdftex.def Info: img/quadrolumcom.png  used on input line 145.
-(pdftex.def)             Requested size: 221.32858pt x 125.02806pt.
- [28 <./img/interfaccia.png>]) [29 <./img/pianoschematico.png> <./img/quadrolum
-com.png>]
-\openout2 = `Chapters/analisi.aux'.
+[18 <./img/diagrammaesame.png>]
+<img/valrischi.png, id=290, 399.29175pt x 482.40225pt>
+File: img/valrischi.png Graphic file (type png)
+<use img/valrischi.png>
+Package pdftex.def Info: img/valrischi.png  used on input line 51.
+(pdftex.def)             Requested size: 159.71387pt x 192.95747pt.
+<img/frequenza.png, id=291, 679.338pt x 452.28975pt>
+File: img/frequenza.png Graphic file (type png)
+<use img/frequenza.png>
+Package pdftex.def Info: img/frequenza.png  used on input line 57.
+(pdftex.def)             Requested size: 271.73038pt x 180.91269pt.
+ [19]
+<img/severit.png, id=298, 730.52925pt x 444.4605pt>
+File: img/severit.png Graphic file (type png)
+<use img/severit.png>
+Package pdftex.def Info: img/severit.png  used on input line 64.
+(pdftex.def)             Requested size: 292.20651pt x 177.78105pt.
+ [20 <./img/valrischi.png> <./img/frequenza.png>]
+<img/risklevel.png, id=306, 555.87675pt x 405.31425pt>
+File: img/risklevel.png Graphic file (type png)
+<use img/risklevel.png>
+Package pdftex.def Info: img/risklevel.png  used on input line 78.
+(pdftex.def)             Requested size: 222.34676pt x 162.12282pt.
+) [21 <./img/severit.png> <./img/risklevel.png>]
+\openout2 = `Chapters/IMR.aux'.
 
- (Chapters/analisi.tex [30
+ (Chapters/IMR.tex
+[22
 
 
 
 
 ]
 chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
+<img/apparaticentrali.png, id=320, 412.54124pt x 275.8305pt>
+File: img/apparaticentrali.png Graphic file (type png)
+<use img/apparaticentrali.png>
+Package pdftex.def Info: img/apparaticentrali.png  used on input line 11.
+(pdftex.def)             Requested size: 206.27011pt x 137.9149pt.
+[23] [24 <./img/apparaticentrali.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
-<img/schematablet.png, id=329, 570.933pt x 521.5485pt>
+<img/architettura.png, id=332, 429.40425pt x 275.8305pt>
+File: img/architettura.png Graphic file (type png)
+<use img/architettura.png>
+Package pdftex.def Info: img/architettura.png  used on input line 47.
+(pdftex.def)             Requested size: 300.58092pt x 193.08002pt.
+[25] [26 <./img/architettura.png>]
+<img/sceglistazione.png, id=347, 457.10776pt x 216.20775pt>
+File: img/sceglistazione.png Graphic file (type png)
+<use img/sceglistazione.png>
+Package pdftex.def Info: img/sceglistazione.png  used on input line 78.
+(pdftex.def)             Requested size: 228.55331pt x 108.1036pt.
+ [27 <./img/sceglistazione.png>]
+<img/login.png, id=354, 437.83575pt x 324.61275pt>
+File: img/login.png Graphic file (type png)
+<use img/login.png>
+Package pdftex.def Info: img/login.png  used on input line 82.
+(pdftex.def)             Requested size: 218.91734pt x 162.30597pt.
+<img/procedura.png, id=355, 642.7212pt x 428.3202pt>
+File: img/procedura.png Graphic file (type png)
+<use img/procedura.png>
+Package pdftex.def Info: img/procedura.png  used on input line 89.
+(pdftex.def)             Requested size: 192.81784pt x 128.49704pt.
+ [28 <./img/login.png> <./img/procedura.png>] [29]
+<img/interfaccia.png, id=372, 430.0065pt x 468.5505pt>
+File: img/interfaccia.png Graphic file (type png)
+<use img/interfaccia.png>
+Package pdftex.def Info: img/interfaccia.png  used on input line 126.
+(pdftex.def)             Requested size: 258.00589pt x 281.13248pt.
+ [30 <./img/interfaccia.png>]
+<img/pianoschematico.png, id=377, 738.3585pt x 416.757pt>
+File: img/pianoschematico.png Graphic file (type png)
+<use img/pianoschematico.png>
+Package pdftex.def Info: img/pianoschematico.png  used on input line 141.
+(pdftex.def)             Requested size: 221.50926pt x 125.02806pt.
+<img/quadrolumcom.png, id=379, 737.75626pt x 416.757pt>
+File: img/quadrolumcom.png Graphic file (type png)
+<use img/quadrolumcom.png>
+Package pdftex.def Info: img/quadrolumcom.png  used on input line 150.
+(pdftex.def)             Requested size: 221.32858pt x 125.02806pt.
+ [31 <./img/pianoschematico.png>]
+<img/schematablet.png, id=384, 570.933pt x 521.5485pt>
 File: img/schematablet.png Graphic file (type png)
 <use img/schematablet.png>
-Package pdftex.def Info: img/schematablet.png  used on input line 12.
+Package pdftex.def Info: img/schematablet.png  used on input line 161.
 (pdftex.def)             Requested size: 342.56244pt x 312.9315pt.
-<img/schemaimrw.png, id=330, 638.98724pt x 398.08725pt>
+<img/schemaimrw.png, id=385, 638.98724pt x 398.08725pt>
 File: img/schemaimrw.png Graphic file (type png)
 <use img/schemaimrw.png>
-Package pdftex.def Info: img/schemaimrw.png  used on input line 17.
+Package pdftex.def Info: img/schemaimrw.png  used on input line 166.
 (pdftex.def)             Requested size: 383.39531pt x 238.85419pt.
+) [32 <./img/quadrolumcom.png>] [33 <./img/schematablet.png> <./img/schemaimrw.
+png>]
+\openout2 = `Chapters/analisi.aux'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--25
-
- []
-
-[31] [32 <./img/schematablet.png>]
-<img/sdprimo.png, id=340, 457.10776pt x 288.47775pt>
-File: img/sdprimo.png Graphic file (type png)
-<use img/sdprimo.png>
-Package pdftex.def Info: img/sdprimo.png  used on input line 38.
-(pdftex.def)             Requested size: 319.97324pt x 201.93304pt.
- [33 <./img/schemaimrw.png>] [34 <./img/sdprimo.png>] [35]
-<img/exceluno.png, id=356, 882.8985pt x 390.258pt>
-File: img/exceluno.png Graphic file (type png)
-<use img/exceluno.png>
-Package pdftex.def Info: img/exceluno.png  used on input line 74.
-(pdftex.def)             Requested size: 441.44817pt x 195.12851pt.
-
-Overfull \hbox (57.33597pt too wide) in paragraph at lines 74--75
- [][] 
- []
-
-[36 <./img/exceluno.png>]
-<img/sdsecondo.png, id=362, 564.9105pt x 214.401pt>
-File: img/sdsecondo.png Graphic file (type png)
-<use img/sdsecondo.png>
-Package pdftex.def Info: img/sdsecondo.png  used on input line 90.
-(pdftex.def)             Requested size: 395.43465pt x 150.07967pt.
-
-Overfull \hbox (11.32245pt too wide) in paragraph at lines 90--91
- [][] 
- []
-
-[37 <./img/sdsecondo.png>]
-<img/exceldue.png, id=368, 882.29625pt x 165.0165pt>
-File: img/exceldue.png Graphic file (type png)
-<use img/exceldue.png>
-Package pdftex.def Info: img/exceldue.png  used on input line 121.
-(pdftex.def)             Requested size: 441.14705pt x 82.50803pt.
-
-Overfull \hbox (57.03485pt too wide) in paragraph at lines 121--122
- [][] 
- []
-
-[38 <./img/exceldue.png>]
-<img/sdterzo.png, id=373, 540.8205pt x 392.06474pt>
-File: img/sdterzo.png Graphic file (type png)
-<use img/sdterzo.png>
-Package pdftex.def Info: img/sdterzo.png  used on input line 137.
-(pdftex.def)             Requested size: 378.57176pt x 274.44344pt.
- [39 <./img/sdterzo.png>] [40]
-<img/exceltre.png, id=383, 895.54575pt x 327.624pt>
-File: img/exceltre.png Graphic file (type png)
-<use img/exceltre.png>
-Package pdftex.def Info: img/exceltre.png  used on input line 161.
-(pdftex.def)             Requested size: 447.77177pt x 163.81158pt.
-
-Overfull \hbox (63.65958pt too wide) in paragraph at lines 161--162
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
-
- []
-
-[41 <./img/exceltre.png>] [42] [43] [44] [45] [46] [47]
-<img/excelquattro.png, id=414, 954.56625pt x 366.77025pt>
-File: img/excelquattro.png Graphic file (type png)
-<use img/excelquattro.png>
-Package pdftex.def Info: img/excelquattro.png  used on input line 241.
-(pdftex.def)             Requested size: 477.28197pt x 183.38467pt.
-
-Overfull \hbox (93.16977pt too wide) in paragraph at lines 241--242
- [][] 
- []
-
-[48 <./img/excelquattro.png>]
-Overfull \hbox (5.6257pt too wide) in paragraph at lines 245--245
-|[]\T1/pplj/m/sc/12 (-20) s e -l e -z i o -n e p i a -n o s c h e -m a -t i -c 
-o ( p s ) , q u a -d r o l u -m i -n o -s o ( q l ) ,
- []
-
-<img/sdsesto.png, id=419, 613.3314pt x 500.1084pt>
-File: img/sdsesto.png Graphic file (type png)
-<use img/sdsesto.png>
-Package pdftex.def Info: img/sdsesto.png  used on input line 250.
-(pdftex.def)             Requested size: 384.1122pt x 313.208pt.
-[49
-
- <./img/sdsesto.png>]
-<img/excelcinque.png, id=425, 899.15926pt x 284.262pt>
-File: img/excelcinque.png Graphic file (type png)
-<use img/excelcinque.png>
-Package pdftex.def Info: img/excelcinque.png  used on input line 276.
-(pdftex.def)             Requested size: 384.1122pt x 121.43217pt.
-) [50] [51 <./img/excelcinque.png>]
-\openout2 = `Chapters/mitigazioni.aux'.
-
-
-(Chapters/mitigazioni.tex [52
+ (Chapters/analisi.tex [34
 
 
 
 
 ]
 chapter 5.
-[53]
-<img/architdue.png, id=443, 442.2924pt x 304.0158pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+<img/sdprimo.png, id=401, 288.47775pt x 456.5055pt>
+File: img/sdprimo.png Graphic file (type png)
+<use img/sdprimo.png>
+Package pdftex.def Info: img/sdprimo.png  used on input line 12.
+(pdftex.def)             Requested size: 230.7825pt x 365.2049pt.
+[35] [36 <./img/sdprimo.png>] [37] [38]
+<img/exceluno.png, id=420, 390.258pt x 882.8985pt>
+File: img/exceluno.png Graphic file (type png)
+<use img/exceluno.png>
+Package pdftex.def Info: img/exceluno.png  used on input line 55.
+(pdftex.def)             Requested size: 195.12851pt x 441.44817pt.
+ [39 <./img/exceluno.png>]
+<img/sdsecondo.png, id=426, 213.79875pt x 564.9105pt>
+File: img/sdsecondo.png Graphic file (type png)
+<use img/sdsecondo.png>
+Package pdftex.def Info: img/sdsecondo.png  used on input line 69.
+(pdftex.def)             Requested size: 171.03922pt x 451.92902pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--71
+
+ []
+
+[40] [41 <./img/sdsecondo.png>]
+<img/exceldue.png, id=437, 164.41425pt x 881.694pt>
+File: img/exceldue.png Graphic file (type png)
+<use img/exceldue.png>
+Package pdftex.def Info: img/exceldue.png  used on input line 95.
+(pdftex.def)             Requested size: 98.64929pt x 529.02048pt.
+ [42] [43 <./img/exceldue.png>]
+<img/sdterzo.png, id=446, 392.06474pt x 540.21825pt>
+File: img/sdterzo.png Graphic file (type png)
+<use img/sdterzo.png>
+Package pdftex.def Info: img/sdterzo.png  used on input line 110.
+(pdftex.def)             Requested size: 274.44344pt x 378.15019pt.
+ [44 <./img/sdterzo.png>]
+<img/exceltre.png, id=452, 327.624pt x 895.54575pt>
+File: img/exceltre.png Graphic file (type png)
+<use img/exceltre.png>
+Package pdftex.def Info: img/exceltre.png  used on input line 126.
+(pdftex.def)             Requested size: 229.33522pt x 626.87775pt.
+
+
+LaTeX Warning: Float too large for page by 39.42354pt on input line 128.
+
+[45] [46 <./img/exceltre.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+[47] [48] [49] [50] [51]
+Overfull \hbox (0.13028pt too wide) in paragraph at lines 204--204
+[] []\T1/pplj/m/sc/12 (-13) c r i -t i -c i -t à c a u -s a -t e d a u n e r -r
+ o -r e a c -c i -d e n -t a -l e d e l s i -s t e -m a o
+ []
+
+[52]
+<img/excelquattro.png, id=486, 366.77025pt x 953.964pt>
+File: img/excelquattro.png Graphic file (type png)
+<use img/excelquattro.png>
+Package pdftex.def Info: img/excelquattro.png  used on input line 221.
+(pdftex.def)             Requested size: 256.73741pt x 667.77025pt.
+
+
+LaTeX Warning: Float too large for page by 80.31604pt on input line 223.
+
+[53] [54 <./img/excelquattro.png>]
+Overfull \hbox (5.6257pt too wide) in paragraph at lines 234--234
+|[]\T1/pplj/m/sc/12 (-20) s e -l e -z i o -n e p i a -n o s c h e -m a -t i -c 
+o ( p s ) , q u a -d r o l u -m i -n o -s o ( q l ) ,
+ []
+
+<img/sdsesto.png, id=496, 500.1084pt x 613.3314pt>
+File: img/sdsesto.png Graphic file (type png)
+<use img/sdsesto.png>
+Package pdftex.def Info: img/sdsesto.png  used on input line 239.
+(pdftex.def)             Requested size: 384.1122pt x 471.07808pt.
+[55] [56 <./img/sdsesto.png>]
+<img/excelcinque.png, id=506, 284.262pt x 899.15926pt>
+File: img/excelcinque.png Graphic file (type png)
+<use img/excelcinque.png>
+Package pdftex.def Info: img/excelcinque.png  used on input line 265.
+(pdftex.def)             Requested size: 192.05609pt x 607.51pt.
+
+
+LaTeX Warning: Float too large for page by 20.05579pt on input line 267.
+
+) [57] [58 <./img/excelcinque.png>]
+\openout2 = `Chapters/mitigazioni.aux'.
+
+ (Chapters/mitigazioni.tex
+chapter 6.
+[59
+
+
+
+
+]
+<img/architdue.png, id=520, 442.2924pt x 304.0158pt>
 File: img/architdue.png Graphic file (type png)
 <use img/architdue.png>
-Package pdftex.def Info: img/architdue.png  used on input line 15.
+Package pdftex.def Info: img/architdue.png  used on input line 19.
 (pdftex.def)             Requested size: 307.29092pt x 211.2231pt.
-<img/sdesecuzione.png, id=444, 584.4234pt x 375.3222pt>
+<img/sdesecuzione.png, id=521, 584.4234pt x 375.3222pt>
 File: img/sdesecuzione.png Graphic file (type png)
 <use img/sdesecuzione.png>
-Package pdftex.def Info: img/sdesecuzione.png  used on input line 28.
+Package pdftex.def Info: img/sdesecuzione.png  used on input line 32.
 (pdftex.def)             Requested size: 422.52576pt x 271.35426pt.
 
-Overfull \hbox (38.41356pt too wide) in paragraph at lines 28--29
+Overfull \hbox (38.41356pt too wide) in paragraph at lines 32--33
  [][] 
  []
 
-[54 <./img/architdue.png>] [55 <./img/sdesecuzione.png>]
-<img/pvs.png, id=459, 544.434pt x 215.00325pt>
+[60 <./img/architdue.png>] [61 <./img/sdesecuzione.png>]
+<img/pvs.png, id=534, 544.434pt x 215.00325pt>
 File: img/pvs.png Graphic file (type png)
 <use img/pvs.png>
-Package pdftex.def Info: img/pvs.png  used on input line 58.
+Package pdftex.def Info: img/pvs.png  used on input line 62.
 (pdftex.def)             Requested size: 345.69862pt x 136.52554pt.
- [56] [57 <./img/pvs.png (PNG copy)>]) [58]
+ [62] [63 <./img/pvs.png (PNG copy)>]) [64]
+\openout2 = `Chapters/conclusioni.aux'.
+
+ (Chapters/conclusioni.tex
+chapter 7.
+[65
+
+
+
+
+]) [66]
 \openout2 = `Chapters/bibliografia.aux'.
 
  (Chapters/bibliografia.tex (thesis.brf)
@@ -1924,48 +1961,61 @@ Package pdftex.def Info: img/pvs.png  used on input line 58.
 \openout6 = `thesis.brf'.
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 14--14
-[]\T1/pplj/m/n/12 (+20) http://www-3.unipv.it- \T1/pplj/m/it/12 (+20) Cir-co-la
--zio-ne ed Im-pian-ti di Si-cu-rez-za e
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[][]$\T1/fvm/m/n/12 http : / / www . rfi . it / rfi / SICUREZZA-[]E-[]INNOVAZIO
+NE / Tecnologie /
  []
 
-) [59
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[][]$\T1/fvm/m/n/12 www . econopoly . ilsole24ore . com / 2016 / 10 / 04 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/fvm/m/n/12 storia-[]quasi-[]breve-[]del-[]risk-[]management-[]nelle-[]banch
+e/$[] \T1/pplj/m/n/12 (+20) -
+ []
+
+[67
 
 
 
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+]) [68]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
  (thesis.aux (titlePage.aux) (Chapters/intro.aux)
-(Chapters/introhazard.aux) (Chapters/IMR.aux) (Chapters/analisi.aux)
-(Chapters/mitigazioni.aux) (Chapters/bibliografia.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
+(Chapters/introdue.aux) (Chapters/introhazard.aux) (Chapters/IMR.aux)
+(Chapters/analisi.aux) (Chapters/mitigazioni.aux) (Chapters/conclusioni.aux)
+(Chapters/bibliografia.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 54BD8E3D78C8049B8FA69E2CB28D4EB9;674.
+(rerunfilecheck)             Checksum: 5850FD25D90D7BF1AEFFDADA361C34C5;1724.
  ) 
 Here is how much of TeX's memory you used:
- 30020 strings out of 492946
- 543432 string characters out of 3125822
- 954340 words of memory out of 3000000
- 32893 multiletter control sequences out of 15000+200000
- 612103 words of font info for 397 fonts, out of 3000000 for 9000
+ 30135 strings out of 492946
+ 545283 string characters out of 3125822
+ 955566 words of memory out of 3000000
+ 32943 multiletter control sequences out of 15000+200000
+ 614117 words of font info for 422 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,13n,73p,9139b,885s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 50i,13n,73p,9239b,1014s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Giulia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.en
 c}<C:/Users/Giulia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/euler/eurb10.pfb><C:/Users/Giulia/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/fpl/fplrc8a.pfb><C:/Users/Giulia/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/fpl/fplrij8a.pfb><C:/Users/Giulia/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/bera/fvmr8a.pfb><C:/Users/Giulia/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/Giulia/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/Giulia/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (61 pages, 3155251 bytes).
+Output written on thesis.pdf (70 pages, 3562316 bytes).
 PDF statistics:
- 648 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
- 77197 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 163 named destinations out of 1000 (max. 500000)
+ 77260 words of extra memory for PDF output out of 89155 (max. 10000000)
 

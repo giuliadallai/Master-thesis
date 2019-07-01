@@ -4,28 +4,15 @@ In questo capitolo viene riportata l'analisi dei rischi vera e propria. Sono sta
 In seguito vengono selezionati gli elementi delle parti e per ognuno di essi vengono applicate le parole guida elencate nei capitoli precedenti in ogni loro interpretazione.\\
 Per ogni rischio evidenziato verranno riportate la frequenza di occorrenza e la severità dell'azzardo; dall'unione di queste due informazioni verrà ricavata la valutazione dell'azzardo in questione. Se il livello di rischio è trascurabile o tollerabile non sarà necessario individuare la mitigazione. Al contrario, se il livello del rischio è indesiderabile o intollerabile, verrà riportato un appropriato meccanismo di protezione o delle indicazioni atte a risolvere la problematica rilevata.\\Una volta che verranno applicate le interpretazioni di tutte le parole guida a tutti gli elementi progettuali, la sezione sarà contrassegnata come completata e si passerà ad esaminare le parti successive.\\ Tutte le informazioni relative all'Hazard analysis sono riportate in un file excel con lo scopo di tener traccia di tutte le cause, conseguenze e mitigazioni rilevate. In tale file excel ogni azzardo viene contrassegnato in maniera univoca da un id in modo tale da riuscire a orientarsi nella tabella. Nel seguente capitolo, per semplicità, il sequence diagram del sistema è stato suddiviso in cinque sezioni e per ognuna di essere sono stati riportati i principali rischi individuati durante l'analisi.\\
 
-\section{Schema funzionale}
-
-Per riuscire a comprendere a pieno tutti i compiti e le operazioni che devono essere effettuate dai componenti presenti nell'apparato IMR è stato necessario utilizzare uno schema funzionale. Tale schema descrive graficamente tutti gli attori del sistema e i rispettivi ruoli: in verde sono riportati i componenti, in rosso i blocchi che descrivono le operazioni critiche e in blu i blocchi che descrivono le operazioni non critiche. 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.6]{img/schematablet}
-	\caption{Schema funzionale Tablet Operatore e AM}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.6]{img/schemaimrw}
-	\caption{Schema funzionale IMRW, IMRS, DM e IMRG}
-\end{figure}
-\newline
-\newline
-\newline
-\newline
-\newline
-
 \section{Autenticazione Tablet e Scelta Stazione}
 
 La prima parte del sistema analizzata è quella relativa all'autenticazione sul Tablet e alla selezione della stazione d'interesse da parte dell'addetto alla manutenzione (AM).\\
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.8]{img/sdprimo}
+	\caption{Sequence Diagram fase Autenticazione Tablet e Scelta Stazione}
+\end{figure}
+\newline
 Durante questa fase i componenti attivi sono: 
 \begin{itemize}
 	\item Addetto alla manutenzione;
@@ -33,11 +20,6 @@ Durante questa fase i componenti attivi sono:
 	\item Server IMRG;
 	\item Server IRMW.
 \end{itemize}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.7]{img/sdprimo}
-	\caption{Sequence Diagram prima fase}
-\end{figure}
 Come viene evidenziato dal sequence diagram questa sezione può essere divisa in due sottosezioni:
 \begin{itemize}
 	\item loop autenticazione;
@@ -46,7 +28,7 @@ Come viene evidenziato dal sequence diagram questa sezione può essere divisa in 
 L'autenticazione al dispositivo è la prima operazione che l'AM deve effettuare, durante questa fase le credenziali vengono verificate direttamente dal Tablet.
 Il server IMRG sarà presente solo in questa fase e nella successiva, in quanto il suo unico ruolo è quello di reindirizzare la connessione verso il server IRM locale e di memorizzare le chiavi pubbliche dell'AM. La reindirizzazione all'IMRW avviene immediatamente dopo la scelta della stazione da parte dell'AM.
 
-\subsection{Rischi individuati nella prima sezione}
+\subsection{Rischi individuati}
 
 Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'utilizzo delle parole guida. Tale analisi ha evidenziato quasi tutti rischi \textit{tollerabili}, infatti molto spesso la severità dei suddetti rischi è stata classificata come \textit{insignificante}, in quanto gli azzardi non comportano problemi per la safety, tra i quali:
 \begin{itemize}
@@ -67,17 +49,15 @@ Durante l'analisi di questa fase sono stati individuati vari rischi mediante l'u
  	\item un attaccante potrebbe inviare al Tablet una pagina web  per scegliere la stazione diversa da quella originale per influire negativamente sul sistema (creando un nuovo messaggio oppure alterando uno già esistente). In questo modo il Tablet quindi verrebbe reindirizzato su un server che potrebbe offrire un'interfaccia simile a quella attesa, ciò potrebbe indurre l'AM a immettere le sue credenziali. L'attaccante in tal caso verrebbe a conoscenza di informazioni riservate che potrebbe utilizzare al fine di danneggiare il sistema;
  	\item un attaccante potrebbe far connettere il Tablet ad un server che replica il comportamento di IMRG es. Tramite social engineering. L'AM verrebbe reindirizzato su un server che potrebbe offrire un'interfaccia simile a quella attesa, ciò potrebbe indurre l'AM a condividere alcune informazioni personali come le credenziali per l'accesso. A questo punto, il server dell'attaccante potrebbe funzionare da man-in-the middle tra l'AM ed il vero server.
  \end{itemize}
- 
+ Nella seguente immagine è presente una sezione del file di log relativo alla fase in questione:
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.5]{img/exceluno}
-	\caption{Sezione hazard analysis prima fase}
-\end{figure}
+
+\includegraphics[scale=0.5]{img/exceluno}
+
 
 \section{Login IMR}
 
-Nella fase di autenticazione da parte dell'AM all'apparato IMR intervengono: 
+In questa fase i componenti che intervengono sono: 
 \begin{itemize}
 	\item Addetto manutenzione;
 	\item Tablet;
@@ -85,14 +65,10 @@ Nella fase di autenticazione da parte dell'AM all'apparato IMR intervengono:
 	\item Server IRMW;
 	\item Server IMRS.
 \end{itemize}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.7]{img/sdsecondo}
-	\caption{Sequence diagram seconda fase}
-\end{figure}
-L'operazione di autenticazione coinvolge quasi tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet se l'utente è autorizzato. IMRS è un server sicuro, progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.
-
-\subsection{Rischi individuati nella seconda sezione}
+L'operazione di autenticazione coinvolge quasi tutti i componenti dell'apparato IMR. Questa operazione avviene mediante ID/Password e un meccanismo di chiave asimmetrica (pubblica-privata). L'addetto manutenzione immette le proprie credenziali e la chiave privata, la chiave pubblica è invece memorizzata dal server centrale IMRG che ha il compito di inviarla all'IMRW. Il server IMRW inoltra tutte le informazioni relative all'autenticazione al server IMRS che si occuperà di verificare l'effettiva correttezza di quest'ultime e quindi di inviare la schermata del Terminale Operatore al Tablet se l'utente è autorizzato. IMRS è un server sicuro, progettato, sviluppato e certificato SIL4 ed è per questo che il controllo delle credenziali viene effettuato su quest'ultimo e non su IMRW.\\
+	\includegraphics[scale=0.8]{img/sdsecondo}
+\newline
+\subsection{Rischi individuati}
 Quasi tutti i rischi individuati in questa sezione non coinvolgono la safety del sistema. Se l'AM non riesce ad autenticarsi all'IMR locale e quindi non riesce a svolgere le sue mansioni per qualunque causa (errore umano, errore accidentale sul server, attacco esterno ecc..), si verifica un problema per la availability e la security del sistema ma non per la safety, quindi tali rischi vengono classificati come \textit{tollerabili}.\\ Di seguito sono riportati i principali azzardi individuati:
 \begin{itemize}
 	\item a causa di un errore accidentale del server IMRG, di un attacco esterno o di un errore di rete generico, il Tablet potrebbe non riuscire a contattare il server IMRG. In tal caso le chiavi pubbliche non potranno essere recuperate;
@@ -115,12 +91,9 @@ Di seguito sono invece riportati alcuni dei rischi classificati come \textit{int
 	
 
 \end{itemize}
+Nella seguente immagine è presente una sezione del file di log della fase in questione:\\
+	\includegraphics[scale=0.6]{img/exceldue}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.5]{img/exceldue}
-	\caption{Sezione hazard analysis seconda fase}
-\end{figure}
 
 \section{Visualizzazione Terminale Operatore (TO)}
 
@@ -135,8 +108,9 @@ Durante le operazioni relative a questa fase, intervengono i seguenti componenti
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.7]{img/sdterzo}
-	\caption{Sequence diagram terza fase}
+	\caption{Sequence diagram fase Visualizzazione TO}
 \end{figure}
+
 Anche qui è possibile rilevare due sottosezioni:
 \begin{itemize}
 	\item visualizzazione Terminale Operatore TO;
@@ -145,8 +119,13 @@ Anche qui è possibile rilevare due sottosezioni:
 Infatti, dopo aver verificato la correttezza delle credenziali, viene inviata dall'IMRS al Tablet la pagina web del Terminale Operatore che riporta tutti gli Enti abilitati per quella determinata stazione.\\ L'AM in questa fase è in grado di selezionare i pulsanti degli <Enti> di stazione e l'IMRS inoltrerà la relativa pagina Web TO con lista <Tipo Ente> esistenti nella Stazione, Stato, QL, e i comandi relativi all'Ente specifico.
 
 
-\subsection{Rischi individuati nella terza sezione}
+\subsection{Rischi individuati}
 Le uniche operazioni che l'AM può effettuare in questa sezione sono quindi: "Pressione bottone <Ente>" e "Pressione specifico <Ente> di Stazione". L'IMRS si occuperà invece di recuperare la lista degli enti esistenti per quella stazione, lo stato degli enti, la porzione di QL specifica e i comandi abilitati. Poichè in questa fase l'AM non si occupa di inviare nè comandi critici nè informazioni sensibili, non vengono evidenziati particolari pericoli per la safety del sistema, tra i principali:
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.7]{img/exceltre}
+	\caption{Sezione Hazard Analysis Visualizzazione TO}
+\end{figure}
 \begin{itemize}
 	
 	\item a causa di un attacco esterno o di un errore di comunicazione, i messaggi inoltrati dall'IMRW all'IMRS, contenenti le richieste degli enti abilitati per stazione, potrebbero venir eliminati, creati, ritardati o ripetuti. Ciò comporterebbe alcuni malfunzionamenti, tuttavia non verrebbe impattata la safety del sistema;
@@ -156,11 +135,7 @@ Le uniche operazioni che l'AM può effettuare in questa sezione sono quindi: "Pre
 	\item a causa di un attacco esterno o di un malfunzionamento del dispositivo, un messaggio contenente le richieste relative a queste sezione del sequence diagram potrebbe venir modificato con una richiesta critica per la safety (es. esecuzione di un comando critico). Il messaggio potrebbe essere riconosciuto come legittimo e la richiesta essere eseguita. Questo azzardo viene valutato come \textit{intollerabile};
 	\item a causa di un attacco esterno o di un malfunzionamento del dispositivo, il messaggio contenente le informazioni inviate dal server IMRS inerenti lo stato del sistema(pagina web TO, lista <Ente> esistente per stazione e comandi relativi all'ente)  potrebbe venir modificato da un messaggio contenente informazioni errate. Il messaggio potrebbe essere riconosciuto come legittimo e l'AM potrebbe essere ingannato da tali informazioni. Questo azzardo viene valutato come \textit{intollerabile}.
 \end{itemize}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.5]{img/exceltre}
-	\caption{Sezione Hazard Analysis terza fase}
-\end{figure}
+
 \section{Esecuzione comando AM}
 
 Questa sezione si occupa di analizzare la fase in cui l'AM vuole eseguire un comando. I componenti che hanno un ruolo attivo sono:
@@ -175,11 +150,27 @@ Questa sezione si occupa di analizzare la fase in cui l'AM vuole eseguire un com
 Questa è l'unica fase in cui è presente anche il Dirigente movimento con il ruolo di autorizzare l'esecuzione dei comandi critici. \\
 In questa fase il Tablet si occupa di inoltrare i comandi all'IMRW, che di conseguenza li comunicherà al Server locale IMRS; tale server sicuro, appartenente alla safe area, trasmette al nucleo in sicurezza le operazioni da eseguire. \\ Il nucleo in sicurezza, dopo aver attuato il comando, invia i dati sullo stato del sistema all'IMRS che eventualmente si occuperà di elaborarli. Le informazioni verranno in seguito inviate al Tablet, in modo tale che l'AM venga informato dello stato del sistema.\\ 
 
-\section{Rischi individuati nella quarta sezione}
-In questa fase viene descritta la procedura più delicata, infatti vengono trasportate informazioni sensibili che potrebbero essere utilizzate da un attaccante per danneggiare catastroficamente il sistema. L'analisi ha portato a individuare varie situazioni indesiderabili, quali:
+\subsection{Rischi individuati}
+In questa fase viene descritta la procedura più delicata, infatti vengono trasportate informazioni sensibili che potrebbero essere utilizzate da un attaccante per danneggiare catastroficamente il sistema. Poichè in questa sezione le criticità individuate sono molteplici, esse sono state suddivise sulla base della loro causa. L'analisi ha portato a individuare varie situazioni indesiderabili, quali:
+\paragraph{Criticità causata da un errore umano}
 \begin{itemize}
-	\item a causa di un errore umano (es. pulsanti troppo vicini sul Tablet), l'AM, nel tentativo di premere il bottone per eseguire un comando, potrebbe cliccare erroneamente su un altro. In questo caso quindi l'AM inoltrerebbe al server IMRS un comando diverso da quello che avrebbe voluto eseguire;
+	\item a causa di un errore umano (es. pulsanti troppo vicini sul Tablet), l'AM, nel tentativo di premere il bottone per eseguire un comando, potrebbe cliccare erroneamente su un altro pulsante. In questo caso quindi l'AM inoltrerebbe al server IMRS un comando diverso da quello che avrebbe voluto eseguire;
+\end{itemize}	
+\paragraph{Criticità causate da un errore accidentale del sistema}	
+\begin{itemize}
+	\item a causa di un errore accidentale del server IMRS, dati e immagini potrebbero venir generati in modo non corretto (informazioni aggiuntive, alterate o parziali). Potrebbero essere mostrate informazioni erronee anche su comandi critici all'AM;
+\item a causa di un errore accidentale del server IMRS, potrebbe venir creato un comando da inoltrare al nucleo in sicurezza. Il nuovo comando potrebbe venire riconosciuto come legittimo e venire eseguito, causando eventualmente gravi problemi;
+\item a causa di un errore accidentale del server IMRS, potrebbe venir duplicato un comando da inoltrare al nucleo in sicurezza. Il nuovo comando potrebbe venire riconosciuto come legittimo e venire eseguito, causando eventualmente gravi problemi;
+\item a causa di un errore accidentale del server IMRS, potrebbe venir ritardato eccessivamente un comando da inoltrare al nucleo in sicurezza. Il comando potrebbe essere eseguito con ritardo, nel caso pessimo alterando lo stato della linea;
+\item a causa di un errore accidentale del server IMRS, potrebbe venir alterato un comando da inoltrare al nucleo in sicurezza. Il nuovo comando potrebbe venire riconosciuto come legittimo e venire eseguito, causando eventualmente gravi problemi;
+\item a causa di un errore accidentale del server IMRS potrebbero non venir ricevuti i dati provenienti dal nucleo in sicurezza. I dati non verrebberp ricevuti dal IMRS  e quindi l'AM non potrebbe visualizzare le informazioni;
+\item a causa di un errore accidentale del server IMRS potrebbero venir ricevuti dati alterati (informazioni aggiuntive, modificate o parziali) provenienti dal nucleo in sicurezza. I nuovi dati potrebbero venire riconosciuti come legittimi, quindi eventualmente verrebberp visualizzate dall'AM informazioni errate;
+\item a causa di un rallentamento sul server IMRS potrebbero venir ricevuti in ritardo i dati dal nucleo in sicurezza. La comunicazione con l'AM diventerebbe più lenta del previsto o eventualmente impossibile. Nel caso peggiore, azioni (inclusioni/esclusioni) effettuate sull'ente verrebbero notificate in ritardo all'AM, che nel frattempo potrebbe trovarsi in pericolo.
 	\item a causa di un errore del touchscreen del Tablet, il dispositivo potrebbe recepire la pressione di un pulsante diverso da quello effettivamente premuto dall'AM. In questo caso quindi verrebbe inoltrato al server IMRS un comando diverso da quello che l'AM avrebbe voluto eseguire;
+	
+\end{itemize}
+	\paragraph{Criticità causate da un attacco esterno}
+	\begin{itemize}
 	\item a causa di un attacco esterno, potrebbe essere alterato il messaggio contenente il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM sul Tablet (es. potrebbe essere modificata la zona da escludere). Il manutentore potrebbe recarsi nella zona che aveva specificato (pensandola esclusa), con il rischio che i treni passino di lì. In questo caso l'attaccante dovrebbe anche modificare la notifica di conferma esecuzione del comando;
 	\item a causa di un attacco esterno, potrebbe essere eliminato il messaggio contenente il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM sul Tablet. Il manutentore potrebbe andare nella zona (pensandola esclusa), con il rischio che i treni passino di lì. In questo caso l'attaccante dovrebbe anche creare la notifica di conferma esecuzione del comando;
 	\item un attaccante potrebbe modificare l'orologio del Tablet per far sembrare la porzione di QL recente quando in realtà non lo è. Il manutentore potrebbe essere a rischio, non avendo la possibilità di visualizzare la lista aggiornata dei comandi;
@@ -197,58 +188,56 @@ In questa fase viene descritta la procedura più delicata, infatti vengono traspo
 	\item a causa di un attacco esterno o malfunzionamento dei server, potrebbe venir ritardato eccessivamente un messaggio dal server IMRW al Tablet. Nel caso peggiore potrebbero essere fornite all'AM informazioni errate;
 	\item a causa di un attacco esterno, di un errore accidentale del server IMRW, i dati ricevuti dal server IMRS potrebbero non venire assemblati. Tali informazioni non saranno visualizzabili. L'AM potrebbe non sapere se un comando è stato eseguito con successo dal nucleo in sicurezza o meno;
 	\item a causa di un attacco esterno o di un errore accidentale del server IMRW i dati ricevuti dal server IMRS potrebbero venire assemblati in modo non corretto (informazioni aggiuntive, alterate o parziali). L'AM potrebbe non sapere se un comando sia stato eseguito con successo dal nucleo in sicurezza o meno;
-	\item a causa di un errore accidentale del server IMRS, dati e immagini potrebbero venir generati in modo non corretto (informazioni aggiuntive, alterate o parziali). Potrebbero essere mostrate informazioni erronee anche su comandi critici all'AM;
-	\item a causa di un errore accidentale del server IMRS, potrebbe venir creato un comando da inoltrare al nucleo in sicurezza. Il nuovo comando potrebbe venire riconosciuto come legittimo e venire eseguito, causando eventualmente gravi problemi;
-	\item a causa di un errore accidentale del server IMRS, potrebbe venir duplicato un comando da inoltrare al nucleo in sicurezza. Il nuovo comando potrebbe venire riconosciuto come legittimo e venire eseguito, causando eventualmente gravi problemi;
-	\item a causa di un errore accidentale del server IMRS, potrebbe venir ritardato eccessivamente un comando da inoltrare al nucleo in sicurezza. Il comando potrebbe essere eseguito con ritardo, nel caso pessimo alterando lo stato della linea;
-	\item a causa di un errore accidentale del server IMRS, potrebbe venir alterato un comando da inoltrare al nucleo in sicurezza. Il nuovo comando potrebbe venire riconosciuto come legittimo e venire eseguito, causando eventualmente gravi problemi;
-	\item a causa di un errore accidentale del server IMRS potrebbero non venir ricevuti i dati provenienti dal nucleo in sicurezza. I dati non verrebberp ricevuti dal IMRS  e quindi l'AM non potrebbe visualizzare le informazioni;
-	\item a causa di un errore accidentale del server IMRS potrebbero venir ricevuti dati alterati (informazioni aggiuntive, modificate o parziali) provenienti dal nucleo in sicurezza. I nuovi dati potrebbero venire riconosciuti come legittimi, quindi eventualmente verrebberp visualizzate dall'AM informazioni errate;
-	\item a causa di un rallentamento sul server IMRS potrebbero venir ricevuti in ritardo i dati dal nucleo in sicurezza. La comunicazione con l'AM diventerebbe più lenta del previsto o eventualmente impossibile. Nel caso peggiore, azioni (inclusioni/esclusioni) effettuate sull'ente verrebbero notificate in ritardo all'AM, che nel frattempo potrebbe trovarsi in pericolo.
+
 	
 	
 \end{itemize}
-
+	
 Sono stati invece classificati come tollerabili i seguenti azzardi:
-
+\paragraph{Criticità causate da un errore umano}
+\begin{itemize}
+\item a causa di un errore umano o per l'indisponibilità della rete telefonica (per malfunzionamento o attacco), l'AM potrebbe non riuscire a effettuare la telefonata al DM (o dimenticarsene); secondo la procedura, in mancanza di conferma del DM, il comando non verrebbe eseguito dal nucleo in sicurezza.
+\item a causa di un errore umano o per l'indisponibilità della rete telefonica (per malfunzionamento o attacco), l'AM potrebbe non riuscire a scambiare telefonicamente tutte le informazioni con il DM. L'AM sarebbe costretto a richiamare il DM;
+\item a causa di un errore umano, dopo che l'AM ha chiamato il DM per avvisarlo del comando che vuole portare a termine, il DM potrebbe non autorizzare tale comando. Secondo la procedura, in mancanza di conferma del DM, il comando non verrebbe eseguito dal nucleo in sicurezza;
+\end{itemize}
+\paragraph{Criticità causate da un errore accidentale del sistema o di comunicazione}
 \begin{itemize}
 	\item a causa di un errore del touchscreen del Tablet o del dispositivo, l'AM potrebbe non essere in grado di premere il pulsante per effettuare il comando;
-	\item a causa di un errore umano o per l'indisponibilità della rete telefonica (per malfunzionamento o attacco), l'AM potrebbe non riuscire a effettuare la telefonata al DM (o dimenticarsene); secondo la procedura, in mancanza di conferma del DM, il comando non verrebbe eseguito dal nucleo in sicurezza.
-	\item a causa di un errore umano o per l'indisponibilità della rete telefonica (per malfunzionamento o attacco), l'AM potrebbe non riuscire a scambiare telefonicamente tutte le informazioni con il DM. L'AM sarebbe costretto a richiamare il DM;
-	\item a causa di un errore umano, dopo che l'AM ha chiamato il DM per avvisarlo del comando che vuole portare a termine, il DM potrebbe non autorizzare tale comando. Secondo la procedura, in mancanza di conferma del DM, il comando non verrebbe eseguito dal nucleo in sicurezza;
+	
 	\item a causa di un errore generico del Tablet o della comunicazione, il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM potrebbe non venir comunicato al server IMRW. In questo caso non verrebbe ricevuta la conferma di esecuzione del comando dall'AM;
 	\item a causa di un errore generico del Tablet o della comunicazione, il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM potrebbe venir comunicato come duplicato;
 	\item a causa di un errore generico del Tablet o della comunicazione, il comando "Esclusione Zona/Ente, Chiusura Segnale o Bloccamento FS" inserito dall'AM, potrebbe venir comunicato con ritardo;
-	\item a causa di un attacco esterno, potrebbe essere eliminato il messaggio contenente le informazioni circa il comando "Inclusione Zona/Ente, Apertura Segnale, Disattivazione Rallentamento, Richiesta trBCA o Liberazione FS" inserito dall'AM sul Tablet. La zona non verrebbe inclusa. In questo caso non verrebbe ricevuta la conferma di esecuzione del comando dall'AM;
-	
-	
-	
-	
-	\item a causa di un errore di comunicazione, un messaggio contenente un comando inviato dal Server IMRW al server IMRS, potrebbe essere eliminato e quindi il comando non eseguito;
+		\item a causa di un errore di comunicazione, un messaggio contenente un comando inviato dal Server IMRW al server IMRS, potrebbe essere eliminato e quindi il comando non eseguito;
 	\item a causa di un errore di comunicazione o di un malfunzionamento del server IMRW un messaggio contenente un comando inviato dal Server IMRW al server IMRS potrebbe essere replicato e quindi il comando eseguito due volte;
 	\item a causa di un errore di rete locale, un messaggio contenente un comando inviato dal Server IMRW al server IMRS potrebbe essere inviato con ritardo, il completamento dell'esecuzione del comando sarebbe ritardata di conseguenza;
-	\item a causa di un attacco esterno, malfunzionamento dei server o errore di rete i dati provenienti dal server IMRS, inoltrati dal server IMRW al Tablet, potrebbero venire eliminati. Si creerebbe una situazione di incertezza da parte dell'AM sul fatto che il comando sia eseguito o meno. Per procedura, in questo caso l'AM dovrebbe consultare il DM;
-	\item a causa di un errore accidentale del server IMRW, i dati ricevuti dal server IMRS potrebbero venire assemblati in ritardo. Si creerebbe una situazione di incertezza da parte dell'AM sul fatto che il comando sia stato eseguito o meno. Per procedura, in questo caso l'AM dovrebbe il DM;
+		\item a causa di un errore accidentale del server IMRW, i dati ricevuti dal server IMRS potrebbero venire assemblati in ritardo. Si creerebbe una situazione di incertezza da parte dell'AM sul fatto che il comando sia stato eseguito o meno. Per procedura, in questo caso l'AM dovrebbe il DM;
 	\item a causa di un errore accidentale del server IMRS, dati e immagini potrebbero non venir generati. Si creerebbe una situazione di incertezza da parte dell'AM sul fatto che il comando sia stato eseguito o meno. Per procedura, in questo caso l'AM dovrebbe consultare il DM;
 	\item a causa di un errore accidentale del server IMRS dati e immagini potrebbero venir generati con ritardo. Si creerebbe una situazione di incertezza da parte dell'AM sul fatto che il comando sia stato eseguito o meno. Per procedura, in questo caso l'AM dovrebbe consultare il DM;
 	\item a causa di un errore accidentale del server IMRS, un comando da inoltrare al nucleo in sicurezza potrebbe venir eliminato e quindi non venir eseguito dal sistema. L'AM non riceverebbe notifica dell'esecuzione del comando.
 	
 	
-\end{itemize}	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{img/excelquattro}
+		\caption{Sezione Hazard Analysis Esecuzione comando AM}
+	\end{figure}
 	
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.5]{img/excelquattro}
-	\caption{Sezione Hazard Analysis quarta fase}
-\end{figure}
-\clearpage
+	
+\end{itemize}
+	\paragraph{Criticità causate da un attacco esterno}
+	\begin{itemize}
+	\item a causa di un attacco esterno, potrebbe essere eliminato il messaggio contenente le informazioni circa il comando "Inclusione Zona/Ente, Apertura Segnale, Disattivazione Rallentamento, Richiesta trBCA o Liberazione FS" inserito dall'AM sul Tablet. La zona non verrebbe inclusa. In questo caso non verrebbe ricevuta la conferma di esecuzione del comando dall'AM;
+	\item a causa di un attacco esterno, malfunzionamento dei server o errore di rete i dati provenienti dal server IMRS, inoltrati dal server IMRW al Tablet, potrebbero venire eliminati. Si creerebbe una situazione di incertezza da parte dell'AM sul fatto che il comando sia eseguito o meno. Per procedura, in questo caso l'AM dovrebbe consultare il DM;
+
+\end{itemize}	
+
 \section{Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}
 
 Le operazioni descritte in questa sezione si occupano di fornire informazioni all'AM circa lo stato del sistema da vari punti di vista. Come riportato nel capitolo precedente, oltre al Terminale Operatore, è possibile accedere anche alla schermata di Log, al Piano schematico e al Quadro luminoso della stazione. Tutte queste schermate offrono elementi aggiuntivi che possono essere utilizzati dall'AM per effettuare il proprio lavoro in maniera più completa.\\
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=1\linewidth]{img/sdsesto}
-	\caption{Sequence diagram quinta fase}
+	\caption{Sequence diagram Selezione PS, QL, Log}
 \end{figure}
 In questa sezione i componenti che operano sono:
 \begin{itemize}
@@ -258,7 +247,7 @@ In questa sezione i componenti che operano sono:
 	\item Server IMRS.
 \end{itemize}
 Ogni volta che l'AM preme l'icona relativa al Quadro luminoso o alla schermata Log o al Piano schematico, la richiesta viene inoltrata al server IMRW e infine al server IMRS che si occupa di restituire le informazioni richieste.\\ Una porzione del quadro luminoso è presente anche nella schermata del Terminale Operatore, quindi ogni volta che viene disattivata o attivata una zona, viene inviata una richiesta all'IMRS per ottenere il quadro luminoso della zona in oggetto.
-\section{Rischi individuati nella quinta sezione}
+\subsection{Rischi individuati}
 Questa sezione non presenta particolari problemi per quanto riguarda la safety del sistema. I principali rischi evidenziati sono:
 
 
@@ -273,8 +262,8 @@ Questa sezione non presenta particolari problemi per quanto riguarda la safety d
 \end{itemize}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=1\linewidth]{img/excelcinque}
-	\caption{Sezione hazard analysis quinta fase}
+	\includegraphics[width=0.5\linewidth]{img/excelcinque}
+	\caption{Sezione hazard analysis Selezione PS, QL, Log}
 \end{figure}
 
 

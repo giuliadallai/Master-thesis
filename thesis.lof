@@ -2,32 +2,34 @@
 \babel@toc {italian}{}
 \deactivateaddvspace 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Diagramma EN 50 126\relax }}{10}{figure.caption.3}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2}{\ignorespaces Il processo per la valutazione dei rischi\relax }}{18}{figure.caption.4}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Tabella per la classificazione delle frequenze\relax }}{18}{figure.caption.5}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces Tabella per la classificazione della severit\`a\relax }}{19}{figure.caption.6}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Risk Matrix\relax }}{19}{figure.caption.7}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagramma EN 50 126 \cite {tredici}\relax }}{11}{figure.caption.3}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Classificazione SIL \cite {quindici}\relax }}{13}{figure.caption.4}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6}{\ignorespaces Apparati centrali\relax }}{23}{figure.caption.8}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces Architettura IMR\relax }}{24}{figure.caption.9}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Procedura di Connessione\relax }}{26}{figure.caption.10}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Icone del Terminale Operatore\relax }}{28}{figure.caption.11}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Piano schematico stazione di Oderzo\relax }}{29}{figure.caption.12}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Quadro luminoso stazione di Oderzo\relax }}{29}{figure.caption.13}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Le parole guida utilizzate durante il processo di Hazard Analysis \cite {quattro}\relax }}{17}{figure.caption.5}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Fase di Esaminazione\relax }}{18}{figure.caption.6}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Il processo per la valutazione dei rischi\relax }}{20}{figure.caption.7}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Tabella per la classificazione delle frequenze \cite {quattro}\relax }}{20}{figure.caption.8}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Tabella per la classificazione della severit\`a \cite {quattro}\relax }}{21}{figure.caption.9}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Matrice dei rischi \cite {quattro}\relax }}{21}{figure.caption.10}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12}{\ignorespaces Schema funzionale Tablet Operatore e AM\relax }}{32}{figure.caption.14}% 
-\contentsline {figure}{\numberline {13}{\ignorespaces Schema funzionale IMRW, IMRS, DM e IMRG\relax }}{33}{figure.caption.15}% 
-\contentsline {figure}{\numberline {14}{\ignorespaces Sequence Diagram prima fase\relax }}{34}{figure.caption.16}% 
-\contentsline {figure}{\numberline {15}{\ignorespaces Sezione hazard analysis prima fase\relax }}{36}{figure.caption.17}% 
-\contentsline {figure}{\numberline {16}{\ignorespaces Sequence diagram seconda fase\relax }}{37}{figure.caption.18}% 
-\contentsline {figure}{\numberline {17}{\ignorespaces Sezione hazard analysis seconda fase\relax }}{38}{figure.caption.19}% 
-\contentsline {figure}{\numberline {18}{\ignorespaces Sequence diagram terza fase\relax }}{39}{figure.caption.20}% 
-\contentsline {figure}{\numberline {19}{\ignorespaces Sezione Hazard Analysis terza fase\relax }}{41}{figure.caption.21}% 
-\contentsline {figure}{\numberline {20}{\ignorespaces Sezione Hazard Analysis quarta fase\relax }}{48}{figure.caption.22}% 
-\contentsline {figure}{\numberline {21}{\ignorespaces Sequence diagram quinta fase\relax }}{49}{figure.caption.23}% 
-\contentsline {figure}{\numberline {22}{\ignorespaces Sezione hazard analysis quinta fase\relax }}{51}{figure.caption.24}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Apparati centrali\relax }}{24}{figure.caption.11}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Architettura IMR\relax }}{26}{figure.caption.12}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Procedura di Connessione\relax }}{28}{figure.caption.13}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Icone del Terminale Operatore\relax }}{30}{figure.caption.14}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Piano schematico stazione di Oderzo\relax }}{31}{figure.caption.15}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Quadro luminoso stazione di Oderzo\relax }}{32}{figure.caption.16}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Schema funzionale Tablet Operatore e AM\relax }}{33}{figure.caption.17}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Schema funzionale IMRW, IMRS, DM e IMRG\relax }}{33}{figure.caption.18}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {23}{\ignorespaces Il ruolo dello Smartphone nell'apparato IMR\relax }}{54}{figure.caption.25}% 
-\contentsline {figure}{\numberline {24}{\ignorespaces Sequence diagram Esecuzione comando\relax }}{55}{figure.caption.26}% 
-\contentsline {figure}{\numberline {25}{\ignorespaces Protocollo PVS\relax }}{57}{figure.caption.27}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Sequence Diagram fase Autenticazione Tablet e Scelta Stazione\relax }}{36}{figure.caption.19}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Sequence diagram fase Visualizzazione TO\relax }}{44}{figure.caption.20}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Sezione Hazard Analysis Visualizzazione TO\relax }}{46}{figure.caption.21}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Sezione Hazard Analysis Esecuzione comando AM\relax }}{54}{figure.caption.22}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Sequence diagram Selezione PS, QL, Log\relax }}{56}{figure.caption.23}% 
+\contentsline {figure}{\numberline {22}{\ignorespaces Sezione hazard analysis Selezione PS, QL, Log\relax }}{58}{figure.caption.24}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {23}{\ignorespaces Il ruolo dello Smartphone nell'apparato IMR\relax }}{60}{figure.caption.25}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces Sequence diagram Esecuzione comando\relax }}{61}{figure.caption.26}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces Protocollo PVS\relax }}{63}{figure.caption.27}% 
+\addvspace {10\p@ }

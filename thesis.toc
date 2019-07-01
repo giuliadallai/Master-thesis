@@ -2,34 +2,46 @@
 \babel@toc {italian}{}
 \vspace {-\cftbeforepartskip }
 \contentsline {chapter}{\numberline {1}Introduzione}{7}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Gestione dei rischi nei sistemi informatici}{8}{section.1.1}% 
-\contentsline {chapter}{\numberline {2}L'analisi dei rischi}{13}{chapter.2}% 
-\contentsline {subsection}{\numberline {2.0.1}Il processo per la valutazione del rischio}{17}{subsection.2.0.1}% 
-\contentsline {chapter}{\numberline {3}L'apparato IMR (Interfaccia Mobile Remota)}{21}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Apparati centrali}{22}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}L'apparato IMR}{22}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Architettura IMR}{23}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Tablet Operatore}{23}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Server IMRG}{24}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Server IMRW}{24}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}Server IMRS}{25}{subsection.3.3.4}% 
-\contentsline {section}{\numberline {3.4}Procedura di Connessione}{25}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Funzionalit\`a del Terminale Operatore}{26}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Il piano schematico}{28}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}Il quadro luminoso}{28}{subsection.3.4.3}% 
-\contentsline {chapter}{\numberline {4}Hazard analysis dell'Apparato IMR}{31}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Schema funzionale}{32}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Autenticazione Tablet e Scelta Stazione}{33}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Rischi individuati nella prima sezione}{34}{subsection.4.2.1}% 
-\contentsline {section}{\numberline {4.3}Login IMR}{36}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Rischi individuati nella seconda sezione}{37}{subsection.4.3.1}% 
-\contentsline {section}{\numberline {4.4}Visualizzazione Terminale Operatore (TO)}{38}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Rischi individuati nella terza sezione}{40}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Esecuzione comando AM}{41}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Rischi individuati nella quarta sezione}{42}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}{49}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}Rischi individuati nella quinta sezione}{50}{section.4.8}% 
-\contentsline {chapter}{\numberline {5}Mitigazioni}{53}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Utilizzo di una One Time Password}{53}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Utilizzo del protocollo PVS}{55}{section.5.2}% 
-\contentsline {section}{\numberline {5.3}Alcune buone pratiche}{56}{section.5.3}% 
+\contentsline {section}{\numberline {1.1}Scopo della tesi}{8}{section.1.1}% 
+\contentsline {chapter}{\numberline {2}Introduzione alla Dependability e agli Standard relativi al settore ferroviario}{9}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}SIL - Safety Integrity Level}{13}{section.2.1}% 
+\contentsline {chapter}{\numberline {3}L'Hazard Analysis}{15}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Tecniche di Hazard analysis}{15}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}L'analisi HAZOP}{16}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Il processo per la valutazione del rischio}{19}{section.3.3}% 
+\contentsline {chapter}{\numberline {4}L'apparato IMR (Interfaccia Mobile Remota)}{23}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Apparati centrali}{23}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}La manutenzione della linea ferroviaria}{24}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}L'apparato IMR}{25}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Architettura IMR}{25}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Tablet Operatore}{26}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Server IMRG}{26}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Server IMRW}{27}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.4}Server IMRS}{27}{subsection.4.4.4}% 
+\contentsline {section}{\numberline {4.5}Procedura di Connessione}{27}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Funzionalit\`a del Terminale Operatore}{29}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Il piano schematico}{31}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Il quadro luminoso}{32}{subsection.4.5.3}% 
+\contentsline {section}{\numberline {4.6}Schema funzionale}{32}{section.4.6}% 
+\contentsline {chapter}{\numberline {5}Hazard analysis dell'Apparato IMR}{35}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Autenticazione Tablet e Scelta Stazione}{36}{section.5.1}% 
+\contentsline {subsection}{\numberline {5.1.1}Rischi individuati}{37}{subsection.5.1.1}% 
+\contentsline {section}{\numberline {5.2}Login IMR}{40}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Rischi individuati}{41}{subsection.5.2.1}% 
+\contentsline {section}{\numberline {5.3}Visualizzazione Terminale Operatore (TO)}{43}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Rischi individuati}{45}{subsection.5.3.1}% 
+\contentsline {section}{\numberline {5.4}Esecuzione comando AM}{47}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Rischi individuati}{48}{subsection.5.4.1}% 
+\contentsline {paragraph}{Criticit\`a causata da un errore umano}{48}{subsection.5.4.1}% 
+\contentsline {paragraph}{Criticit\`a causate da un errore accidentale del sistema}{48}{subsection.5.4.1}% 
+\contentsline {paragraph}{Criticit\`a causate da un attacco esterno}{49}{subsection.5.4.1}% 
+\contentsline {paragraph}{Criticit\`a causate da un errore umano}{52}{subsection.5.4.1}% 
+\contentsline {paragraph}{Criticit\`a causate da un errore accidentale del sistema o di comunicazione}{52}{subsection.5.4.1}% 
+\contentsline {paragraph}{Criticit\`a causate da un attacco esterno}{55}{figure.caption.22}% 
+\contentsline {section}{\numberline {5.5}Selezione Piano Schematico (PS), Quadro Luminoso (QL), Log}{55}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Rischi individuati}{57}{subsection.5.5.1}% 
+\contentsline {chapter}{\numberline {6}Mitigazioni}{59}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Utilizzo di una One Time Password}{59}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Utilizzo del protocollo PVS}{61}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Direttive comportamentali}{63}{section.6.3}% 
+\contentsline {chapter}{\numberline {7}Conclusioni}{65}{chapter.7}% 

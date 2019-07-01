@@ -1,31 +1,39 @@
-\chapter{L'analisi dei rischi}
+\chapter{L'Hazard Analysis}
+\section{Tecniche di Hazard analysis}
 La valutazione dei rischi rappresenta il momento fondamentale per la prevenzione delle criticità nelle aziende con lo scopo di individuare e risolvere i problemi che è possibile riscontrare.
-Esistono molti strumenti e tecniche disponibili per l'identificazione di potenziali pericoli e problemi di operabilità, di seguito sono riportate i più utilizzati:
+Esistono molti strumenti e tecniche disponibili per l'identificazione di potenziali pericoli e problemi di operabilità, di seguito sono riportate i più utilizzati: \cite{due}
 \begin{itemize}
-	\item \textbf{Checklists}: lista di voci che occorre controllare e spuntare per verificare che una determinata serie di operazioni sia stata eseguita correttamente;
-	\item \textbf{Fault Modes and Effects Analysis (FMEA)}: analisi eseguita preventivamente e quindi basata su considerazioni teoriche e non sperimentali. Come primo passo viene effettuata la scomposizione del sistema in sottosistemi, per ognuno di essi devono essere elencati tutti i possibili guasti e successivamente le cause e le conseguenze; \cite{uno}
-	\item \textbf{Fault Tree Analysis}: tecnica analitica in cui innanzitutto viene individuato uno stato indesiderato in cui può venire a trovarsi il sistema e in seguito viene effettuata un'analisi per determinare tutti i modi credibili in cui l'evento indesiderato può verificarsi. \cite{due}
-	\item \textbf{Studio "What-if"}: viene condotto utilizzando un approccio del tipo brainstorming; si inizia con l'analizzare pericoli già noti al team di lavoro per arrivare ad altri potenziali scenari incidentali;
-	\item \textbf{HAZOP}: esercizio che si svolge attraverso la formulazione di alcune specifiche domande strutturate; è finalizzato all'individuazione di deviazioni dagli intenti di progetto che possono portare ad inconvenienti di sicurezza o di esercizio. \cite{tre}
+	\item \textbf{Checklists}: lista di voci che occorre controllare e spuntare per verificare che una determinata serie di operazioni sia stata eseguita correttamente. Si tratta di uno dei metodi più semplici e meno costosi per la valutazione dei rischi, molto utile per rilevare gli errori di progettazione più comuni \cite{tre};
+	\item \textbf{Fault Modes and Effects Analysis (FMEA)}: analisi eseguita preventivamente e quindi basata su considerazioni teoriche e non sperimentali. Come primo passo viene effettuata la scomposizione del sistema in sottosistemi, per ognuno di essi devono essere elencati tutti i possibili guasti e successivamente le cause e le conseguenze. Negli anni '80 fu usata dalla Ford per ridurre i rischi visto che un modello di automobile, la Pinto, presentava un problema ripetitivo di rottura del serbatoio che causava incendi in caso di incidenti; \cite{uno}
+	\item \textbf{Fault Tree Analysis (FTA)}: tecnica analitica in cui innanzitutto viene individuato uno stato indesiderato in cui può venire a trovarsi il sistema e in seguito viene effettuata un'analisi per determinare tutti i modi credibili in cui l'evento indesiderato può verificarsi. La FTA ha trovato sempre più occasioni di applicazione, nel mondo manifatturiero come anche più di recente in quello dei servizi, risultando oggi uno dei metodi più semplici ed efficaci nell'analisi dell'affidabilità e sicurezza dei sistemi. \cite{dieci}
+	\item \textbf{Studio "What-if"}: viene condotto utilizzando un approccio del tipo brainstorming; si inizia con l'analizzare pericoli già noti al team di lavoro per arrivare ad altri potenziali scenari incidentali; fra i suoi scopi primari è compresa la stima delle conseguenze del "peggior caso" verificabile. Ha il pregio di poter essere applicata, secondo le esigenze, più o meno dettagliatamente; \cite{tre}
+	\item \textbf{HAZOP}: esercizio finalizzato all'individuazione di deviazioni dagli intenti di progetto che possono portare ad inconvenienti di sicurezza o di esercizio. Tale procedura, attraverso l'uso di parole guida appositamente create, è in grado di evidenziare le criticità che un sistema può incontrare nel suo ciclo di vita. \cite{quattro}
 \end{itemize}
 
-Alcune tecniche, come le Checklists e lo Studio "What-If", possono essere utilizzate all'inizio del ciclo di vita del sistema o se non è richiesta un'analisi dettagliata; al contrario, se vogliamo avere informazioni più complete sui pericoli a cui è sottoposto il sistema è opportuno procedere con un'analisi HAZOP, tale tecnica verrà descritta e approfondita successivamente.\
-\newline
-Nella seguenti tesi verrà esposta l'hazard analysis dell'apparato IMR di RFI per la manutenzione delle varie linee ferroviarie.\\
-L'obiettivo del lavoro è quello di individuare tutti i potenziali pericoli, sia quelli essenzialmente rilevanti per l'area immediata del sistema, sia quelli con una sfera di influenza più ampia.\\
-Per effettuare tale lavoro è stata utilizzata la strategia \textbf{HAZOP} (	\textbf{HAZ}ard and \textbf{OP}erability analysis); tale tecnica ha avuto origine da studi di tipo assicurativo, specie su grandi impianti di processo, estendendo la sua applicazione ad ambiti e dimensioni diverse.
+Alcune tecniche, come le Checklists e lo Studio "What-If", possono essere utilizzate all'inizio del ciclo di vita del sistema o se non è richiesta un'analisi dettagliata; al contrario, se vogliamo avere informazioni più complete sui pericoli a cui è sottoposto il sistema è opportuno procedere con un'analisi \textbf{HAZOP} (	\textbf{HAZ}ard and \textbf{OP}erability analysis). 
+
+\section{L'analisi HAZOP}
+Tale tecnica ha avuto origine da studi di tipo assicurativo, specie su grandi impianti di processo, estendendo la sua applicazione ad ambiti e dimensioni diverse.
 L'HAZOP mira all'individuazione dei pericoli esistenti nella gestione di un determinato processo lavorativo. Tali pericoli sono identificati e indagati sulla base di deviazioni, siano esse accidentali o meno, di parametri chiave, caratteristici del processo in esame. \cite{tre}\\
-L'espressione \textit{analisi dei rischi} viene sinteticamente utilizzata per indicare un processo che in pratica comprende 4 fasi:
+L'espressione \textit{hazard analysis} viene sinteticamente utilizzata per indicare un processo che in pratica comprende 4 fasi: \cite{quattro}
 \begin{itemize}
 	\item \textit{Definizione}: in questa fase gli obiettivi e lo scopo dell'analisi devono essere definiti. Questa prima fase è fondamentale per chiarire quali siano i confini del sistema e le sue interfacce con altri sistemi, in modo tale che l'analisi non si discosti in aree irrilevanti rispetto all'obiettivo;
-	\item \textit{Preparazione}: questa fase ha lo scopo di ottenere le informazioni necessarie per effettuare l'analisi e di convertire tali informazioni in un formato adatto. In seguito deve essere riportata una descrizione del progetto contenente tutti i dettagli tecnici e amministrativi necessari. Devono essere fornite informazioni circa le condizioni ambientali in cui il sistema opererà, qualifiche, abilità ed esperienza del personale operativo e di manutenzione e infine devono essere riportate le problematiche evidenziate in sistemi simili. Non di minore importanza è l'operazione di stima del tempo necessario per condurre l'analisi che deve essere eseguita in questo frangente; infine, devono essere scelte le parole guida più adeguate per condurre l'analisi del sistema, considerando che una parola guida troppo specifica può limitare le idee e la discussione, al contrario una troppo generica potrebbe non focalizzare lo studio in modo efficiente. Di seguito è riportata la lista delle parole guida:
-	\includegraphics[scale = 0.5]{img/parolechiave}
+	\item \textit{Preparazione}: questa fase ha lo scopo di ottenere le informazioni necessarie per effettuare l'analisi e di convertire tali informazioni in un formato adatto. In seguito deve essere riportata una descrizione del progetto contenente tutti i dettagli tecnici e amministrativi necessari. Devono essere fornite informazioni circa le condizioni ambientali in cui il sistema opererà, qualifiche, abilità ed esperienza del personale operativo e di manutenzione e infine devono essere riportate le problematiche evidenziate in sistemi simili. Non di minore importanza è l'operazione di stima del tempo necessario per condurre l'analisi che deve essere eseguita in questo frangente; infine, devono essere scelte le parole guida più adeguate per condurre l'analisi del sistema, considerando che una parola guida troppo specifica può limitare le idee e la discussione, al contrario una troppo generica potrebbe non focalizzare lo studio in modo efficiente. 
+	 \begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.4]{img/parolechiave}
+		\caption{Le parole guida utilizzate durante il processo di Hazard Analysis \cite{quattro}}
+	\end{figure}
 	\item \textit{Esaminazione}: questa è la fase che rappresenta la vera e propria analisi del sistema. Come prima cosa viene diviso il sistema in parti, tale divisione deve essere effettuata in modo pertinente ai fini dell'analisi; in seguito deve essere spiegato il ruolo progettuale della parte in questione, gli elementi pertinenti e le eventuali caratteristiche associate agli elementi identificati.
 	Per ogni parte del sistema devono essere individuate le parole guida appropriate, ovvero quelle che possono dar luce a eventuali criticità. Le parole guida vengono esaminate nel contesto dell'elemento o della caratteristica studiata per rilevare eventuali deviazioni credibili dall'intento progettuale.\\ 
 	Qualora venga trovata una deviazione credibile, viene effettuata un'indagine per individuare tutte le cause e le conseguenze. Le deviazioni vengono classificate in base al potenziale impatto e alla loro frequenza di accadimento, come vedremo in seguito. Di fondamentale importanza è identificare la presenza di meccanismi di protezione e rilevamento della deviazione che possono essere inclusi nella parte selezionata. Questo procedimento viene ripetuto per ogni parte del sistema, per ogni parola guida e per ogni sua interpretazione, al fine di riuscire a individuare tutti i rischi a cui il sistema può andare incontro.\\
-	Quando una parte è stata del tutto esaminata, dovrebbe essere contrassegnata come completata. Di seguito viene riportato il diagramma di flusso della procedura appena descritta:\\
-	\includegraphics{img/diagrammaesame}
+	Quando una parte è stata del tutto esaminata, dovrebbe essere contrassegnata come completata.  \begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{img/diagrammaesame}
+		\caption{Fase di Esaminazione}
+	\end{figure}
 	\item \textit{Documentazione}: per completare l'analisi e ottenere tutti i suoi benefici è opportuno documentarla. Esistono due approcci per effettuare tale procedura: registrazione completa o solo per eccezione. La registrazione completa comporta la registrazione di tutti i risultati. Questo metodo può risultare ingombrante ma sicuramente completo di tutte le informazioni; al contrario, la registrazione delle eccezioni implica la memorizzazione esclusivamente dei rischi identificati e dei problemi di operabilità. In tal caso la quantità di dati da memorizzare è inferiore e sicuramente la gestione di questi ultimi è più semplice.\\ Una buona documentazione dovrebbe includere dettagliatamente quanto segue:
+	\newline
 	\begin{itemize}
 		\item dettagli dei pericoli identificati e problemi di operabilità;
 		\item raccomandazioni per eventuali ulteriori studi su aspetti specifici del progetto utilizzando tecniche diverse, se necessario;
@@ -36,8 +44,8 @@ L'espressione \textit{analisi dei rischi} viene sinteticamente utilizzata per in
  Attraverso la registrazione per eccezioni le informazioni sui vari rischi sono descritte in maniera piuttosto concisa, senza riportare informazioni dettagliate.\\
  Nella documentazione ogni azzardo, problema operativo o pericolo, insieme alle proprie eventuali cause, dovrebbe essere registrato come elemento separato e indipendente.\\ Infine, dovrebbe essere adottato un sistema di numerazione per fare in modo che ogni rischio, problema operativo, mitigazione e raccomandazione venga identificato in maniera univoca. Per garantire il recupero della documentazione, è opportuno che essa venga archiviata.
 \end{itemize}
- \subsection{Il processo per la valutazione del rischio}
- Come precedentemente anticipato nella fase di esaminazione è opportuno effettuare una valutazione del rischio riscontrato. \\
+ \section{Il processo per la valutazione del rischio}
+ Come precedentemente anticipato nella fase di esaminazione è opportuno effettuare una valutazione del rischio riscontrato. Infatti, secondo la normativa EN 50126, prima che il sistema inizi a operare, è richiesto che tutti i rischi vengano misurati, valutati e considerati tollerabili. \cite{tredici} \\
  \begin{figure}[htbp]
  	\centering
  	\includegraphics[scale=0.4]{img/valrischi}
@@ -47,14 +55,14 @@ Le attività di valutazione del rischio vengono condotte con lo scopo di quantifi
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.4]{img/frequenza}\\
-	\caption{Tabella per la classificazione delle frequenze}
+	\caption{Tabella per la classificazione delle frequenze \cite{quattro}}
 \end{figure}
 
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=0.4]{img/severit}\\
-	\caption{Tabella per la classificazione della severità}
+	\caption{Tabella per la classificazione della severità \cite{quattro}}
 \end{figure}
 Quest'ultimo può essere classificato come:
 \begin{itemize}
@@ -68,7 +76,7 @@ Qualora il livello del rischio sia trascurabile o tollerabile non è necessario i
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[scale=0.4]{img/risklevel}\\
-		\caption{Risk Matrix}
+		\caption{Matrice dei rischi \cite{quattro}}
 	\end{figure}
 	
  

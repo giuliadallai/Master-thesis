@@ -1,7 +1,11 @@
 \chapter{Mitigazioni}
 
-Nel capitolo precedente sono stati analizzati i principali azzardi individuati nell'apparato IMR e molti di questi sono stati classificati come \textit{intollerabili}; per questi ultimi è opportuno realizzare una procedura di mitigazione. La mitigazione può avere come scopo quello di ridurre la severità dell'azzardo oppure renderlo meno frequente, in modo tale che possa venir considerato \textit{tollerabile} per il sistema. Di seguito sono riportate le mitigazioni applicate all'apparato successivamente all'hazard analysis.
-
+Nel capitolo precedente sono stati analizzati i principali azzardi individuati nell'apparato IMR e molti di questi sono stati classificati come \textit{intollerabili}; per questi ultimi è opportuno realizzare una procedura di mitigazione. La mitigazione può avere come scopo quello di ridurre la severità dell'azzardo oppure renderlo meno frequente, in modo tale che possa venir considerato \textit{tollerabile} per il sistema. In questo capitolo+ sono descritte le due mitigazioni applicate all'apparato successivamente all'hazard analysis: 
+\begin{itemize}
+	\item utilizzo di una One Time Password;
+	\item utilizzo del protocollo PVS.
+\end{itemize}
+Tramite l'utilizzo di una OTP infatti è possibile rendere tollerabili tutte le criticità riscontrate nella fase di "Esecuzione comando AM" descritta nel capitolo precedente. Invece, attraverso l'utilizzo del protocollo PVS sono stati mitigati tutti i rimanenti azzardi.
 
 \section{Utilizzo di una One Time Password}
 Dall'analisi è risultato che la maggior parte della situazioni indesiderabili si verificherebbe quando l'AM tenta di eseguire un comando critico. Infatti è possibile che, a causa di un attacco esterno oppure accidentalmente, il messaggio contenente il comando venga eliminato o alterato, così come la risposta di conferma di esecuzione del comando. Per ovviare a tale problematica è stato pensato di aggiungere all'architettura dell'apparato un ulteriore dispositivo: lo Smartphone.\\
@@ -31,7 +35,7 @@ Durante tutta la procedura appena descritta l'AM è direttamente responsabile di 
 
 
 \section{Utilizzo del protocollo PVS}
-Poiché i canali di comunicazione ordinari non sono affidabili, l'apparato IMR adotta un protocollo noto come Protocollo Vitale Standard (PVS), ideato da RFI per consentire interazioni sicure tra diversi dispositivi. Per imporre la safety di tutte le comunicazioni la procedura deve essere progettata secondo lo standard EN50159 \cite{dodici} e dovrebbe essere codificata come linguaggio di medio-basso livello in accordo allo standard EN50128 \cite{tredici}.\\ Il protocollo PVS fornisce un livello di safety insieme alla protezione contro l'accesso non autorizzato attraverso l'uso di codici di sicurezza e tecniche crittografiche. Le tecniche e gli algoritmi inclusi nel protocollo sono stati identificati tra quelli collaudati, validati e proven-in-use nel settore ferroviario.
+Poiché i canali di comunicazione ordinari non sono affidabili, l'apparato IMR adotta un protocollo noto come Protocollo Vitale Standard (PVS), ideato da RFI per consentire interazioni sicure tra diversi dispositivi. Per imporre la safety di tutte le comunicazioni la procedura deve essere progettata secondo lo standard EN50159 \cite{dodici} e dovrebbe essere codificata come linguaggio di medio-basso livello in accordo allo standard EN50128 \cite{undici}.\\ Il protocollo PVS fornisce un livello di safety insieme alla protezione contro l'accesso non autorizzato attraverso l'uso di codici di sicurezza e tecniche crittografiche. Le tecniche e gli algoritmi inclusi nel protocollo sono stati identificati tra quelli collaudati, validati e proven-in-use nel settore ferroviario.
 \newline
 Il protocollo può essere riassunto come un software aggiuntivo che fornisce le funzionalità OSI di sessione e presentazione tramite:
 \begin{itemize}
@@ -60,9 +64,9 @@ Invece l'interazione tra il server IMRW e il Tablet prevede una procedura più ar
  \end{figure}
  
 
-\section{Alcune buone pratiche}
+\section{Direttive comportamentali}
 Tramite l'utilizzo delle due mitigazioni appena descritte, tutti i rischi classificati come \textit{intollerabili} nel capitolo precedente, possono venir rivalutati e considerati invece come \textit{ammissibili} per l'apparato IMR. Infatti, attraverso l'uso del protocollo PVS e della procedura che prevede l'inserimento delle OTP, la safety del sistema non è più a rischio. \\
-Di seguito ho pensato di inserire alcune buone pratiche per l'utilizzo del sistema, per cercare di ottimizzare l'impiego di quest'ultimo:
+Di seguito sono state inserite alcune linee guida per l'utilizzo del sistema, per cercare di ottimizzare l'impiego di quest'ultimo:
 \begin{itemize}
 	\item \textit{avere a disposizione un tablet di riserva}: questo accorgimento è necessario quando il tablet utilizzato dall'operatore non riesce a eseguire correttamente le operazioni di base (touchscreen non reattivo, spegnimento improvviso del tablet, mancata gestione della batteria ecc..);
 	
